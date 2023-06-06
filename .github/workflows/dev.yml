@@ -1,4 +1,4 @@
-name: Release
+name: Dev Build
 
 on:
   push:
@@ -43,10 +43,15 @@ jobs:
         with:
           file: './system.json'
           field: 'download'
-          value: "https://github.com/${{github.repository}}/releases/download/${{github.run_number}}/${{steps.systemID.outputs.prop}}.zip"
+          value: "https://github.com/${{github.repository}}/releases/download/dev-${{github.run_number}}/${{steps.systemID.outputs.prop}}.zip"
 
       -  name: Create Release
          run: |
-            hub release create -a ./${{steps.systemID.outputs.prop}}.zip -a ./system.json -m "dev build ${{github.run_number}}" ${{github.run_number}}
+            TAG_NAME="v1.0.0-beta"
+            RELEASE_NAME="Beta Release"
+
+            # Create the release
+            gh release create "dev-${{github.run_number}}" --title "dev-${{github.run_number}}" --notes "dev build ${{github.run_number}}" --prerelease ./${{steps.systemID.outputs.prop}}.zip ./system.json
          env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
