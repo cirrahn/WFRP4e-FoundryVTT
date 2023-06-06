@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const foundryPath = require("./foundry-path.js");
 import copy from "rollup-plugin-copy-watch";
+import scss from "rollup-plugin-scss";
 
 import jscc from "rollup-plugin-jscc";
 
@@ -22,6 +23,7 @@ export default {
 		jscc({
 			values: {_ENV: process.env.NODE_ENV},
 		}),
+		scss({fileName: "css/wfrp4e-skins.css"}),
 		copy({
 			targets: [
 				{src: "./template.json", dest: systemPath},

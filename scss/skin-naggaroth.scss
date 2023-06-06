@@ -1,0 +1,12 @@
+.skin-naggaroth {
+	body {
+		background: url(../ui/naggaroth/background.webp) repeat;
+	}
+
+	#players {
+		border-image: url(../ui/naggaroth/players-border.webp) 21 repeat;
+		border-image-slice: 23 19 23 19;
+		border-image-width: 23px 19px 23px 19px;
+		border-image-outset: 22px 17px 16px 14px;
+	}
+}

@@ -38,6 +38,27 @@ export default function () {
 			restricted: true,
 		});
 
+		// region Skin
+		function _setSkin (skin) {
+			document.documentElement.classList.toggle("skin-naggaroth", skin === "naggaroth");
+		}
+
+		game.settings.register("wfrp4e", "skin", {
+			name: "SETTINGS.Skin",
+			hint: "SETTINGS.SkinHint",
+			scope: "world",
+			config: true,
+			default: "default",
+			type: String,
+			choices: {
+				"default": "SETTINGS.SkinDefault",
+				"naggaroth": "SETTINGS.SkinNaggaroth",
+			},
+			onChange: skin => _setSkin(skin),
+		});
+		_setSkin(game.settings.get("wfrp4e", "skin"));
+		// endregion
+
 		// Register initiative rule
 		game.settings.register("wfrp4e", "initiativeRule", {
 			name: "SETTINGS.InitRule",

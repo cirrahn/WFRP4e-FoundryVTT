@@ -46,6 +46,9 @@ import ItemDialog from "./modules/apps/item-dialog.js";
 import { WFRPJournalTextPageSheet } from "./modules/system/journal-sheet.js";
 import { ChargenStage } from "./modules/apps/chargen/stage.js";
 
+// Import styling
+import "./scss/skin-naggaroth.scss";
+
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
