@@ -1,74 +1,70 @@
-import CombatHelpers from "../system/combat.js"
-import WFRP_Utility from "../system/utility-wfrp4e.js"
+import CombatHelpers from "../system/combat.js";
+import WFRP_Utility from "../system/utility-wfrp4e.js";
 
-export default function() {
-  Hooks.on("updateCombat", CombatHelpers.updateCombat)
-  Hooks.on("preUpdateCombat", CombatHelpers.preUpdateCombat)
-  Hooks.on("deleteCombat", CombatHelpers.endCombat)
+export default function () {
+	Hooks.on("updateCombat", CombatHelpers.updateCombat);
+	Hooks.on("preUpdateCombat", CombatHelpers.preUpdateCombat);
+	Hooks.on("deleteCombat", CombatHelpers.endCombat);
 
+	Hooks.on("preCreateCombatant", (combatant, data) => {
+		combatant.updateSource({img: WFRP_Utility.replacePopoutPath(combatant.token.texture.src)});
+	});
 
-  Hooks.on("preCreateCombatant", (combatant, data) => {
-    combatant.updateSource({img : WFRP_Utility.replacePopoutPath(combatant.token.texture.src)})
-  })
+	Hooks.on("createCombatant", combatant => {
+		if (game.settings.get("wfrp4e", "useGroupAdvantage")) {
+			let advantage = game.settings.get("wfrp4e", "groupAdvantageValues");
+			combatant.actor.update({"system.status.advantage.value": advantage[combatant.actor.advantageGroup]}, {fromGroupAdvantage: true});
+		}
+		let mask = combatant.token.hidden;
+		if (mask) {
+			let data = {};
+			data.img = "systems/wfrp4e/tokens/unknown.png";
+			data.name = "???";
+			combatant.update(data);
+		}
+	});
 
-  Hooks.on("createCombatant", combatant => {
-    if (game.settings.get("wfrp4e", "useGroupAdvantage")) {
-      let advantage = game.settings.get("wfrp4e", "groupAdvantageValues")
-      combatant.actor.update({"system.status.advantage.value" : advantage[combatant.actor.advantageGroup]}, {fromGroupAdvantage : true})
-    }
-    let mask = combatant.token.hidden
-    if (mask) {
-      let data = {};
-      data.img = "systems/wfrp4e/tokens/unknown.png"
-      data.name = "???"
-      combatant.update(data);
-    }
-  });
+	Hooks.on("updateToken", function (scene, tokenData, diffData, options, userId) {
+		if (game.combat?.active) {
+			let combatant = game.combat.turns.find(x => x.tokenId == tokenData._id);
+			let token = game.canvas.tokens.getDocuments().find(x => x._id == tokenData._id);
+			let mask = token.hidden;
+			let data = null;
+			if (combatant && mask && !combatant.hidden && combatant.name !== "???") {
+				data = {};
+				data.img = "systems/wfrp4e/tokens/unknown.png";
+				data.name = "???";
+			} else if (combatant && !mask && !combatant.hidden && combatant.name === "???") {
+				data = {};
+				data.img = token.texture.src;
+				data.name = token.name;
+			}
+			if (data) {
+				combatant.update(data);
+			}
+		}
+	});
 
-  Hooks.on("updateToken", function(scene, tokenData, diffData, options, userId) {
-    if (game.combat?.active) { 
-      let combatant = game.combat.turns.find(x => x.tokenId == tokenData._id);
-      let token = game.canvas.tokens.getDocuments().find(x => x._id == tokenData._id);
-      let mask = token.hidden;
-      let data = null;
-      if (combatant && mask && !combatant.hidden && combatant.name != "???") {
-        data = {};
-        data.img = "systems/wfrp4e/tokens/unknown.png"
-        data.name = "???"
-      }
-      else if (combatant && !mask && !combatant.hidden && combatant.name == "???") {
-        data = {};
-        data.img = token.texture.src;
-        data.name = token.name;
-      }
-      if (data) {
-        combatant.update(data);
-      }
-    }
-  });
+	/* Custom Combat Carousel */
+	Hooks.on("renderCombatCarousel", () => {
+		addClassByQuerySelector("wfrp4e", "#combat-carousel");
+		let carouselSize = game.settings.get("combat-carousel", "carouselSize");
+		if (carouselSize !== "") {
+			addClassByQuerySelector(carouselSize, "#combat-carousel");
+		}
+	});
 
+	function addClassByQuerySelector (className, selector) {
+		let navigation = document.querySelector(selector);
+		navigation.classList.add(className);
+	}
 
-  /* Custom Combat Carousel */
-  Hooks.on('renderCombatCarousel', () => {
-    addClassByQuerySelector("wfrp4e", "#combat-carousel")
-    let carouselSize = game.settings.get('combat-carousel', 'carouselSize')
-    if (carouselSize !== "") {
-      addClassByQuerySelector(carouselSize, "#combat-carousel")
-    }
-  });
-  
-  function addClassByQuerySelector(className, selector) {
-    let navigation = document.querySelector(selector);
-    navigation.classList.add(className)
-  }
+	Hooks.on("renderCombatTracker", (app, html, options) => {
+		WFRP_Utility.replacePopoutTokens(app.element); // Combat tracker shows tokens, replace popout versions with normal
 
-  Hooks.on("renderCombatTracker", (app, html, options) => {
-    WFRP_Utility.replacePopoutTokens(app.element); // Combat tracker shows tokens, replace popout versions with normal
-
-    if (game.settings.get("wfrp4e", "useGroupAdvantage"))
-    {
-      let advantage = game.settings.get("wfrp4e", "groupAdvantageValues")
-      let element = 
+		if (game.settings.get("wfrp4e", "useGroupAdvantage")) {
+			let advantage = game.settings.get("wfrp4e", "groupAdvantageValues");
+			let element =
       $(`
       <div class="advantage-groups">
       <div class="advantage-group">
@@ -81,20 +77,19 @@ export default function() {
       <input data-group="enemies" ${game.user.isGM ? "" : "disabled"} type="number" value=${advantage.enemies}>
       </div>
       </div>
-      `)
+      `);
 
+			element.find("input").on("focus", ev => {
+				ev.target.select();
+			});
 
-      element.find("input").on("focus", ev => {
-        ev.target.select();
-      })
+			element.find("input").on("change", async ev => {
+				let group = ev.currentTarget.dataset.group;
+				let value = Number(ev.currentTarget.value || 0);
+				WFRP_Utility.updateGroupAdvantage({[`${group}`]: value});
+			});
 
-      element.find("input").on("change", async ev => {
-        let group = ev.currentTarget.dataset.group
-        let value = Number(ev.currentTarget.value || 0)
-        WFRP_Utility.updateGroupAdvantage({[`${group}`] : value})
-      })
-
-      element.insertAfter(html.find(".combat-tracker-header"))
-    }
-  })
+			element.insertAfter(html.find(".combat-tracker-header"));
+		}
+	});
 }
