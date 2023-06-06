@@ -61,7 +61,7 @@ jobs:
 
       -  name: Create Release
          run: |
-            gh release create "dev-${{github.run_number}}" --title "dev-${{github.run_number}}" --notes "dev build ${{github.run_number}}"./${{steps.systemID.outputs.prop}}.zip ./system.json
+            gh release create "dev-${{github.run_number}}" --title "dev-${{github.run_number}}" --notes "dev build ${{github.run_number}}" ./${{steps.systemID.outputs.prop}}.zip ./system.json
          env:
             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
