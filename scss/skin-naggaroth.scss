@@ -1,7 +1,11 @@
+@import "cursor-naggaroth";
+
 .skin-naggaroth {
 	body {
 		background: url(../ui/naggaroth/background.webp) repeat;
 	}
+
+
 
 	#players {
 		border-image: url(../ui/naggaroth/players-border.webp) 21 repeat;
@@ -9,4 +13,266 @@
 		border-image-width: 23px 19px 23px 19px;
 		border-image-outset: 22px 17px 16px 14px;
 	}
+
+	#hotbar #action-bar #macro-list {
+		flex: 0 0 510px;
+		height: 100%;
+		list-style: none;
+		margin: 0 0px;
+		padding: 5px 0px 4px 0px;
+		border: none;
+		border-radius: 4px;
+		justify-content: center;
+		background: url(../ui/naggaroth/frames/hotkeybox-macro-list.webp);
+		box-shadow: 2px 2px 5px #000000;
+	}
+
+	#hotbar #action-bar .macro {
+		border-image: url(../ui/naggaroth/frames/hotkeybox.webp) 21 repeat;
+		border-image-slice: 6 6 6 6 fill;
+		border-image-width: 6px 6px 6px 6px;
+		border-image-outset: 0px 0px 0px 0px;
+		border-radius: 0px;
+	}
+
+	#pause > img {
+		content: url(../ui/naggaroth/khaine.webp);
+		height: 256px;
+		width: 256px;
+		top: -75px;
+		left: calc(50% - 132px);
+	}
+
+
+	#sidebar {
+		background: url(../ui/naggaroth/sidebar.webp) repeat;
+	}
+
+	#sidebar-tabs {
+		display: flex;
+		flex: none;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-evenly;
+		position: relative;
+		top: 0px;
+		left: 1x;
+		width: 392px;
+		height: 52px;
+		margin: 0px;
+		padding: 0px 4px 0px 4px;
+		border: none;
+		box-shadow: none;
+		background: url(../ui/naggaroth/sidebar-border.webp) repeat;
+	}
+
+	.sidebar-popout button, .sidebar-tab .directory-footer button, #macros .directory-footer button, #macros .directory-footer button, #sidebar button, #sidebar .header-actions button, .action-buttons button {
+		margin: 0px 5px 6px 5px !important;
+		padding: 2px 0px 0px 0px;
+		height: 34px;
+		border: 1px solid black;
+		border-image: url(../ui/naggaroth/footer-button.webp) 10 repeat;
+		border-image-width: 4px;
+		border-image-outset: 0px;
+		box-shadow: 4px 4px 1px #00000085;
+		background: url(../ui/naggaroth/sidebar_button-background_red.webp) repeat;
+		background-origin: padding-box;
+		color: #dadada;
+		font-family: CaslonAntique;
+		font-size: var(--font-size-20);
+		font-weight: 500;
+		text-shadow: 0px 0px 1px #00000063;
+	}
+
+	#chat-form {
+		min-height: 150px;
+		position: relative;
+		bottom: 0px;
+		right: 0px;
+		display: flex;
+		margin: 0px;
+		background: url(../ui/frames/parchment-texture.webp) repeat;
+		border: 1px solid black;
+		border-image: url(../ui/naggaroth/chat-form-border.webp) 10 repeat;
+		border-image-width: 10px;
+		border-image-outset: 0px 0px;
+		box-shadow: inset 0 0 40px #000000;
+	}
+
+	#controls .scene-control.active, #controls .control-tool.active, #controls .scene-control:hover, #controls .control-tool:hover {
+		cursor: default;
+		color: #FFF;
+		background: url(../ui/naggaroth/sidebar_button-background_red.webp) repeat !important;
+		background-origin: padding-box !important;
+		border-image: url(../ui/naggaroth/footer-button.webp) 10 repeat !important;
+		border-image-width: 4px !important;
+		border-image-outset: 0px !important;
+		box-shadow: 0 0 3px #ff6400 !important;
+	}
+
+	#hotbar .bar-controls {
+		background: #000000de;
+		box-shadow: 0 0 4px black;
+		border-radius: 16px;
+		border: 2px solid #3d14bdc2;
+	}
+
+	#navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
+		cursor: default;
+		color: #FFF;
+		background: url(../ui/naggaroth/sidebar_button-background_red.webp) repeat;
+		background-origin: padding-box;
+		border-image: url(../ui/naggaroth/footer-button.webp) 10 repeat;
+		border-image-width: 4px;
+		border-image-outset: 0px;
+		box-shadow: 0 0 3px #ff6400;
+	}
+
+	#sidebar.collapsed {
+		width: 50px !important;
+		height: 400px !important;
+		position: absolute;
+		top: 15px;
+		right: -1px;
+		padding: 19px 0px 0px 2px;
+		margin: 3px 0px 0px 0px;
+		border: 1px solid black;
+		border-image: url(../ui/frames/naggaroth/sidebar-collapsed.webp);
+		border-image-slice: 9 fill;
+		border-image-width: 9px;
+		border-image-outset: 0px 0px 0px 0px;
+		border-image-repeat: repeat;
+		border-top-left-radius: 7px;
+		border-bottom-left-radius: 7px;
+		box-shadow: -2px 0px 8px #000;
+	}
+
+	#navigation #scene-list .scene.nav-item {
+		cursor: default;
+		color: #FFF;
+		background: url(../ui/sidebar_button-background_cyan.webp) repeat;
+		background-origin: padding-box;
+		border-image: url(../ui/naggaroth/footer-button.webp) 10 repeat;
+		border-image-width: 4px;
+		border-image-outset: 0px;
+		font-family: CaslonPro;
+		font-weight: 500;
+		font-size: var(--font-size-14);
+		padding-top: 2px;
+	}
+
+	#sidebar-tabs > [data-tab~="chat"] {
+		background: url(../ui/naggaroth/sidebar-button-chat.webp);
+	}
+	#sidebar-tabs > [data-tab~="chat"].active i {
+		background: url(../ui/naggaroth/sidebar-button-chat-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="combat"] {
+		background: url(../ui/naggaroth/sidebar-button-combat.webp);
+	}
+	#sidebar-tabs > [data-tab~="combat"].active i {
+		background: url(../ui/naggaroth/sidebar-button-combat-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="scenes"] {
+		background: url(../ui/naggaroth/sidebar-button-scenes.webp);
+	}
+	#sidebar-tabs > [data-tab~="scenes"].active i {
+		background: url(../ui/naggaroth/sidebar-button-scenes-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="actors"] {
+		background: url(../ui/naggaroth/sidebar-button-actors.webp);
+	}
+	#sidebar-tabs > [data-tab~="actors"].active i {
+		background: url(../ui/naggaroth/sidebar-button-actors-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="items"] {
+		background: url(../ui/naggaroth/sidebar-button-items.webp);
+	}
+	#sidebar-tabs > [data-tab~="items"].active i {
+		background: url(../ui/naggaroth/sidebar-button-items-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="journal"] {
+		background: url(../ui/naggaroth/sidebar-button-journal.webp);
+	}
+	#sidebar-tabs > [data-tab~="journal"].active i {
+		background: url(../ui/naggaroth/sidebar-button-journal-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="tables"] {
+		background: url(../ui/naggaroth/sidebar-button-tables.webp);
+	}
+	#sidebar-tabs > [data-tab~="tables"].active i {
+		background: url(../ui/naggaroth/sidebar-button-tables-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="cards"] {
+		background: url(../ui/naggaroth/sidebar-button-cards.webp);
+	}
+	#sidebar-tabs > [data-tab~="cards"].active i {
+		background: url(../ui/naggaroth/sidebar-button-cards-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="playlists"] {
+		background: url(../ui/naggaroth/sidebar-button-playlists.webp);
+	}
+	#sidebar-tabs > [data-tab~="playlists"].active i {
+		background: url(../ui/naggaroth/sidebar-button-playlists-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="compendium"] {
+		background: url(../ui/naggaroth/sidebar-button-compendium.webp);
+	}
+	#sidebar-tabs > [data-tab~="compendium"].active i {
+		background: url(../ui/naggaroth/sidebar-button-compendium-active.webp);
+	}
+
+
+	#sidebar-tabs > [data-tab~="settings"] {
+		background: url(../ui/naggaroth/sidebar-button-settings.webp);
+	}
+	#sidebar-tabs > [data-tab~="settings"].active i {
+		background: url(../ui/naggaroth/sidebar-button-settings-active.webp);
+	}
+
+	#sidebar-tabs > .collapse {
+		display: inline-block;
+		flex: none;
+		height: 30px;
+		width: 30px;
+		margin: 0px;
+		padding: 0px;
+		color: #ff000000;
+		border: none;
+		border-radius: 0px;
+		position: relative;
+		top: 8px;
+		position: relative;
+		top: 8px;
+		left: 0px;
+		height: 30px;
+		width: 30px;
+		border-radius: 0px;
+		box-shadow: none;
+		border: none;
+		border-bottom: none;
+		text-shadow: 0 0 10px #ff000000;
+		visibility: visible;
+		background: url(../ui/naggaroth/sidebar-button-settings-active.webp);
+		background: url(../ui/naggaroth/sidebar-button-collapse.webp);
+	}
+
 }
