@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const foundryPath = require("./foundry-path.js");
-import copy from "rollup-plugin-copy-watch";
+import copy from "rollup-plugin-copy";
+import watch from "rollup-plugin-watch";
 import scss from "rollup-plugin-scss";
 
 import jscc from "rollup-plugin-jscc";
@@ -31,9 +32,19 @@ export default {
 				{src: "./WFRP-Header.jpg", dest: systemPath},
 				{src: "./static/*", dest: systemPath},
 			],
-			watch: process.env.NODE_ENV === "production" ? false : ["./static/*/**", "system.json", "template.json"],
 		}),
-	],
+		process.env.NODE_ENV === "production"
+			? null
+			// FIXME this does not track *new* files, only changes/deletions to existing files
+			: watch({
+				dir: process.cwd(),
+				include: [
+					/static(\/.*)?/,
+					"system.json",
+					"template.json",
+				],
+			}),
+	].filter(Boolean),
 	onwarn (warning, warn) {
 		// suppress eval warnings
 		if (warning.code === "EVAL") return;
