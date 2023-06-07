@@ -5,13 +5,13 @@
 /*   I. LOCAL FONTS                                               */
 /*   III. SIDEBAR                                                 */
 /*   IV. ITEM SHEET                                               */
-/*   V. ACTOR SHEET (CHARACTER)                                   */ 
+/*   V. ACTOR SHEET (CHARACTER)                                   */
 /*   VI. ACTOR SHEET (NPC)                                        */
 /*   VII. ACTOR SHEET (CREATURE)                                  */
 /*   VIII. ACTOR SHEET (TOKEN)                                    */
 /*   IX. PLAYERS LIST                                             */
 /*   X. NAVIGATION BAR                                            */
-/*   XI. SCENE CONTROLS                                           */ 
+/*   XI. SCENE CONTROLS                                           */
 /*   XII. GAME SETTINGS                                           */
 /*   XIII. ROLL DIALOG                                            */
 /*   XIV. HOTBAR                                                  */
@@ -73,7 +73,7 @@
 
 /* ==================== (A) AWESOME FONT ICON CHANGES ========= */
   .fa-check-circle:before {
-    content: "\f058" !important; 
+    content: "\f058" !important;
   }
   .fa-trash:before {
     content: "\f2ed" !important;
@@ -87,7 +87,7 @@
   }
 
   .tabs .item:hover {
-    text-shadow: 0 0 10px #ff9f00 
+    text-shadow: 0 0 10px #ff9f00
   }
 
 /* ==================== (B) BUTTON BEHAVIOR CHANGES =========== */
@@ -97,7 +97,7 @@
   button:hover {
     box-shadow: 0 0 5px #ff9f00 !important;
   }
-  input[type="text"]:focus, 
+  input[type="text"]:focus,
   input[type="password"]:focus {
     box-shadow: 0 0 5px #ff9f00;
     outline: none;
@@ -242,7 +242,7 @@
     font-style: italic;
   }
 
-  
+
    .app.window-app.sheet .editor blockquote.sidebar,
    .app.window-app.journal-sheet .journal-entry-page.text blockquote.sidebar {
     border-left: 0px;
@@ -271,7 +271,7 @@
     background: rgba(53, 0, 121, 0.05);
     border-top: 1px solid #666;
     border-bottom: 1px solid #666;
-  } 
+  }
 
   .app.sheet .editor-content {
     margin: 0px 5px 0px 0px;
@@ -282,8 +282,8 @@
     margin-top: 0px;
   }
 
- 
-.app.window-app.sheet .editor-content ul li::marker, 
+
+.app.window-app.sheet .editor-content ul li::marker,
 .app.window-app.journal-sheet .journal-entry-page.text ul li::marker{
   font-family: OnlySkulls;
   content: "0";
@@ -349,7 +349,7 @@
     --actor-label-color: #464331c4;
 
     --color-border-highlight: #7c2626;
-  /* =================== 2. DEBUGGING HIGHLIGHTERS ============ */ 
+  /* =================== 2. DEBUGGING HIGHLIGHTERS ============ */
     --debug-background-color-red: #ff000054;
     --debug-background-color-blue: #1d00ff54;
     --debug-background-color-green: #54ff0054;
@@ -363,7 +363,7 @@
 /* ==================== (F) SCROLLBAR ========================= */
   .app.window-app.sheet.wfrp4e.actor ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app.sheet.wfrp4e.actor ::-webkit-scrollbar-thumb {
     outline: none;
@@ -385,11 +385,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app.sheet.wfrp4e.actor ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.webp) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -409,7 +409,7 @@
   .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar,
   .app.window-app .editor ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-thumb,
   .app.window-app .editor ::-webkit-scrollbar-thumb {
@@ -434,12 +434,12 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app.sheet.journal-entry .journal-entry-pages ::-webkit-scrollbar-button:end:increment,
   .app.window-app .editor ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.webp) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -462,7 +462,7 @@
 
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar-thumb {
     outline: none;
@@ -484,11 +484,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.webp) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -504,7 +504,7 @@
     border-radius: 0px;
     /* background: blue; */
   }
-  
+
   #sidebar ::-webkit-scrollbar {
     width: 14px;
   }
@@ -527,13 +527,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   #sidebar ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   #sidebar ::-webkit-scrollbar-button:vertical:start:increment,
   #sidebar ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -568,13 +568,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app.form ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app.form ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app.form ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -589,7 +589,7 @@
 
   .window-app.app.filepicker ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .window-app.app.filepicker ::-webkit-scrollbar-thumb {
     outline: none;
@@ -611,11 +611,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .window-app.app.filepicker ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.webp) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -658,13 +658,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app.dialog ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app.dialog ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app.dialog ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -700,13 +700,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.webp) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -740,11 +740,11 @@
     box-shadow: none !important;
     height: 16px !important;
     background-position-y: 1px !important;
-  } 
+  }
   #sidebar #chat-form ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.webp) no-repeat !important;
     background-position-y: -1px !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
     height: 16px !important;
   }
   #sidebar #chat-form ::-webkit-scrollbar-button:vertical:start:increment,
@@ -780,11 +780,11 @@
     box-shadow: none !important;
     height: 16px !important;
     background-position-y: 1px !important;
-  } 
+  }
   .window-app.dialog .talent-selector ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.webp) no-repeat !important;
     background-position-y: -1px !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
     height: 16px !important;
   }
   .window-app.dialog .talent-selector ::-webkit-scrollbar-button:vertical:start:increment,
@@ -935,15 +935,15 @@
     box-shadow: none;
     background: none;
   }
-  
+
    .directory .directory-header .header-search {
-    
+
     flex: 1;
     justify-content: left;
     text-align: center;
   }
      .directory .directory-header .header-search input {
-      
+
       line-height: 20px;
       width: calc(100% - 45px);
       margin: 3px;
@@ -960,20 +960,20 @@
       text-align: left;
     }
      .directory .directory-header .header-search input::placeholder {
-      
+
       text-align: center;
       color: #000000b8;
       position: relative;
       top: 2px;
     }
    .directory .directory-header .header-control {
-    
+
     height: 32px;
     position: relative;
     left: -6px;
   }
      .directory .directory-header .fas.fa-sort-amount-up {
-    
+
       width: 30px;
       height: 30px;
       position: relative;
@@ -986,13 +986,13 @@
     }
 
   .sidebar-directory .directory-list {
-  
+
     height: auto;
     margin: 0px 5px 0px 0px;
     padding-right: 5px;
   }
   .sidebar-directory .directory-list header {
-    
+
     /* padding: 9px 3px 4px 3px; */
     /* border: 3px groove #564d3a; */
     /* box-shadow: 0 0 6px #000 inset; */
@@ -1005,17 +1005,17 @@
     text-shadow: 1px 1px 2px black;
   }
   .sidebar-directory .directory-list li {
-    
+
     border-bottom: 2px groove #333;
     margin-right: 1px;
-  }  
+  }
   .sidebar-directory .directory-list .subdirectory li {
-    
+
     border-bottom: 2px groove #333;
     margin-right: 0px;
-  }  
+  }
   .sidebar-directory .directory-list .subdirectory .directory-item {
-    
+
     margin-left: 10px;
     /* background: grey; */
   }
@@ -1123,7 +1123,7 @@
     visibility: visible;
     background: url(../ui/sidebar-button-settings-active.webp);
     background: url(../ui/sidebar-button-collapse.webp);
-  }   
+  }
   #sidebar.collapsed .collapse {
     background: url(../ui/sidebar-button-collapse-active.webp);
   }
@@ -1502,8 +1502,8 @@
     border: 1px solid #564d3a;
     border-radius: 0px
   }
-    
-    
+
+
   .combat-sidebar #combat-tracker {
     height: calc(100% - 73px - 50px);
     padding: 1px 0;
@@ -1616,7 +1616,7 @@
 
   .sidebar-tab .directory-list .directory-item h4 {
   }
-  
+
 /* ==================== (G) SIDEBAR (ITEMS) =================== */
 
 
@@ -1828,7 +1828,7 @@
 #item-properties .property-header,
 #tables-popout h2,
     #sidebar #tables h2{
-    background: #290a0ad9; 
+    background: #290a0ad9;
   }
   #tables-popout .wfrp-table,
     #sidebar #tables .wfrp-table {
@@ -1876,7 +1876,7 @@
   }
 
 /******************************************************************/
-/******************************************************************/     
+/******************************************************************/
 
 
 
@@ -2400,18 +2400,18 @@
     overflow-y: scroll;
     margin-top: 6px;
     overflow-x: hidden
-  }     
-  
+  }
+
   .app.window-app.sheet.item-sheet .tab[data-tab="effects"] {
     overflow-y: hidden;
   }
-  
+
   .app.window-app.sheet.item-sheet .tab.description.active {
     display: flex;
     flex-flow: column;
     height: calc(100% - 129px);
     overflow-y: hidden;
-  }    
+  }
     .app.window-app.sheet.item-sheet .editor {
       border: 1px solid #736953a6;
       box-shadow: 0px 0px 1px inset black;
@@ -2491,7 +2491,7 @@
       color: black;
     }
     .app.window-app.sheet.item-sheet.career-sheet .skills{
-      height: 100%      
+      height: 100%
     }
 
 
@@ -2562,7 +2562,7 @@
     box-shadow: none;
   }
 
-  
+
 
 /* ==================== (D) TALENTS =========================== */
   .app.window-app.sheet.item-sheet.talent-sheet .sheet-tabs {
@@ -2647,7 +2647,7 @@
     height: 28px;
     position: relative;
     padding: 0;
-  } 
+  }
     .app.window-app.sheet.item-sheet.injury-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2737,7 +2737,7 @@
     border: 1px dotted #463a3a;
     box-shadow: none;
     }
-    
+
 /* ==================== (F) MUTATION ========================== */
   .app.window-app.sheet.item-sheet.mutation-sheet {
     /* font-family: CaslonAntique;
@@ -2756,7 +2756,7 @@
     position: relative;
     padding: 0;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.mutation-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2804,7 +2804,7 @@
     position: relative;
     padding: 0;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.creature-trait-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2911,7 +2911,7 @@
     margin: -21px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.prayer-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3030,7 +3030,7 @@
     position: relative;
     padding: 0;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.skill-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3139,7 +3139,7 @@
     position: relative;
     padding: 0;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.spell-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3231,11 +3231,11 @@
     }
 
 
-      
+
 /* ==================== (L) SIDEBAR CHAT FORM ================= */
 
 /******************************************************************/
-/******************************************************************/ 
+/******************************************************************/
 
 
 
@@ -3370,7 +3370,7 @@
     /* border-image: url(../ui/frames/actor-sheet-character-window-content.webp) 4 repeat; */
     /* border-image-slice: 106 106 106 106 fill; */
     /* border-image-width: 106; */
-    /* border-image-outset: 0px; 
+    /* border-image-outset: 0px;
   } */
   /*
   .app.window-app.sheet.wfrp4e.actor.character-sheet .window-content form {
@@ -3388,7 +3388,7 @@
     border-image-width: 250;
     border-image-outset: 0px;
     /* background: red; */
-    /* box-shadow: var(--debug-box-shadow-red); 
+    /* box-shadow: var(--debug-box-shadow-red);
   }*/
 
 /* ==================== (D) PERSONAL DETAILS ================== */
@@ -3775,7 +3775,7 @@
       background: none;
       border: 1px solid #736953a6;
       flex: 1;
-    }   
+    }
     .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-row {
       font-family: var(--actor-label-font-family);
       font-size: var(--actor-label-font-size);
@@ -3787,15 +3787,15 @@
       border-bottom: none;
       border-right: none;
       display: flex;
-    }  
+    }
         .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-row.bottom {
           border-bottom: none;
           height: 28px;
-        }  
+        }
         .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-row.bottom div {
           border-bottom: none;
           max-height: 28px;
-        }  
+        }
         .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-row.bottom .row-type.table-data {
           border-bottom: none;
           max-height: 26px;
@@ -3803,12 +3803,12 @@
           position: relative;
           top: -1px;
           margin-top: 1px;
-        }  
+        }
     .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-header.table-row .table-header:first-of-type {
       max-width: 9.09%;
       width: 9.09%;
       min-width: max(63px, 9.09%);
-    }  
+    }
     .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-row .table-header {
       font-family: var(--actor-label-font-family);
       font-size: var(--actor-label-font-size);
@@ -3819,13 +3819,13 @@
       width: 100%;
       border-bottom: none;
       border-right: 1px solid #736953a6;
-    }  
+    }
       .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-header .header-block {
         padding-top: 0px;
-      }  
+      }
       .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-header:last-of-type {
         border-right: none;
-      } 
+      }
       .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-header .header-block .advancement-indicator {
         position: fixed;
         margin-top: -3px;
@@ -3852,7 +3852,7 @@
       overflow: hidden;
       max-height: 29px;
     }
-    
+
     .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .characteristics-table .table-data {
       border-top: 1px solid #736953a6;
       border-right: 1px solid #736953a6;
@@ -4356,7 +4356,7 @@
             height: 22px;
             padding: 5px 0px 0px 0px;
           }
-        
+
     .app.window-app.sheet.wfrp4e.actor.character-sheet .tab.main.active .main-row .experience.row-section {
       display: flex;
       flex-direction: column;
@@ -4473,7 +4473,7 @@
     }
     .app.window-app.sheet.wfrp4e.actor .exp-log .total-spent,
     .app.window-app.sheet.wfrp4e.actor .exp-log .exp-spent,
-    .app.window-app.sheet.wfrp4e.actor .exp-log .reason { 
+    .app.window-app.sheet.wfrp4e.actor .exp-log .reason {
       flex : 1;
       text-align: left;
     }
@@ -4483,7 +4483,7 @@
       justify-content: start;
     }
 
-    
+
     .app.window-app.sheet.wfrp4e.actor .exp-log .exp-spent.values .exp-left-aligner {
       width: 50%;
       display: flex;
@@ -4541,7 +4541,7 @@
         /* background: red; */
         text-align: center;
       }
-      
+
     .app.window-app.sheet.wfrp4e.actor .exp-log .inventory-list,
     .app.window-app.sheet.wfrp4e.actor .career-list .inventory-list {
       width: 100%;
@@ -4958,7 +4958,7 @@
         position: relative;
         top: 0px;
       }
-      
+
       .app.window-app.sheet.wfrp4e.actor #input-status.positive,
         .app.window-app.sheet.wfrp4e.actor .tab.skills.active .skill-section .inventory-list .item .skill-total.positive {
         color: darkgreen
@@ -5188,7 +5188,7 @@
     /* background: red; */
     text-align: center;
     }
-    
+
   .app.window-app.sheet.wfrp4e.actor .tab.talents.active .inventory-list.talent-list {
     overscroll-behavior-x: unset;
     overflow-x: hidden;
@@ -5509,8 +5509,8 @@
         top: 2px;
         left: 3px;
       }
- 
- 
+
+
 
       .app.window-app.sheet.wfrp4e.actor .rest-icon{
         left: 5px;
@@ -5761,7 +5761,7 @@
           margin-right: 4px;
           padding: 2px 2px 0px 2px;
           background: #774e000f;
-          box-shadow: 0 0 3px #6b3a0f2b inset;        
+          box-shadow: 0 0 3px #6b3a0f2b inset;
         }
     .app.window-app.sheet.wfrp4e.vehicle-sheet .inventory-list.melee-weapon-list .item .weapon-property .label ,
     .app.window-app.sheet.wfrp4e.creature-sheet .inventory-list.melee-weapon-list .item .weapon-property .label ,
@@ -5813,7 +5813,7 @@
         .app.window-app.sheet.wfrp4e.creature-sheet .inventory-list.melee-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wfrp4e.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wfrp4e.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h2:last-of-type,
-        .app.window-app.sheet.wfrp4e.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h3:last-of-type, 
+        .app.window-app.sheet.wfrp4e.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h3:last-of-type,
         .app.window-app.sheet.wfrp4e.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h4:last-of-type {
           visibility: hidden;
           margin: 0px 2px 0px 0px;
@@ -6078,7 +6078,7 @@
           margin-right: 4px;
           padding: 2px 2px 0px 2px;
           background: #774e000f;
-          box-shadow: 0 0 3px #6b3a0f2b inset;        
+          box-shadow: 0 0 3px #6b3a0f2b inset;
         }
         .app.window-app.sheet.wfrp4e.creature-sheet .inventory-list.ranged-weapon-list .item .weapon-property .label,
         .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property .label {
@@ -6110,11 +6110,11 @@
           padding: 3px 0px 0px 0px;
           margin-right: 0px;
           min-width: fit-content;
-          max-width: fit-content; 
+          max-width: fit-content;
         } */
         /* .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property h2:last-of-type,
-        .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property h3:last-of-type, 
+        .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property h3:last-of-type,
         .app.window-app.sheet.wfrp4e.actor  .inventory-list.ranged-weapon-list .item .weapon-property h4:last-of-type {
           visibility: hidden;
           margin: 0px 2px 0px 0px;
@@ -6395,7 +6395,7 @@
     height: 75px;
   }
 
-  .app.window-app.sheet.wfrp4e.actor  .attacker-header, 
+  .app.window-app.sheet.wfrp4e.actor  .attacker-header,
     .app.window-app.sheet.wfrp4e.actor  .mount-header {
     width: 100%;
     height: 20px;
@@ -6440,7 +6440,7 @@
     height: 50px;
   }
 
-  .app.window-app.sheet.wfrp4e.actor .mount-section .mount-details .mount-stats 
+  .app.window-app.sheet.wfrp4e.actor .mount-section .mount-details .mount-stats
   {
     display: flex;
     justify-content: space-around;
@@ -6503,7 +6503,7 @@
   .app.window-app.sheet.wfrp4e.actor .mount-section .mount-details .mount-controls > * {
     margin: 5px
   }
-  
+
 
 
   /* Generic List */
@@ -6549,7 +6549,7 @@
     text-align: center;
   }
 
-  
+
   .app.window-app.sheet .item-sheet.wfrp4e .sheet-list .item .content .list-controls.effect-controls,
     .app.window-app.sheet.wfrp4e.actor .inventory-list.sheet-list .item .content .list-controls.effect-controls {
     padding: 10px 0px 0px 0px;
@@ -6659,7 +6659,7 @@
   .app.window-app.sheet.wfrp4e.actor  .inventory-list.sheet-list.role-list .item .content .list-controls {
     padding: 6px 0px 0px 0px;
     font-size: var(--font-size-13);
-    max-width: 50px;    
+    max-width: 50px;
   }
 
   .app.window-app.sheet.wfrp4e.actor  .list-header .source,
@@ -6855,7 +6855,7 @@
       .app.window-app.sheet.wfrp4e.actor .system-effects select {
         background: none;
         text-align: center;
-        flex: 2;    
+        flex: 2;
       }
   .app.window-app.sheet.wfrp4e.actor .tab.magic.active .inventory-header.petty-header {
     width: 100%;
@@ -7208,7 +7208,7 @@
     flex-direction: row;
     height: 25px;
     margin-top: 0px;
-  } 
+  }
   .app.window-app.sheet.wfrp4e.actor .tab.religion.active .religion-box-1 {
     display: flex;
     flex-direction: row;
@@ -7594,7 +7594,7 @@
         display: inline-flex;
         /* background: red; */
         flex: 3;
-      } 
+      }
   .app.window-app.sheet.wfrp4e.actor.vehicle-sheet .tab.cargo .encumbrance-header .encumbrance-counter-block,
   .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .encumbrance-header .encumbrance-counter-block {
         flex-grow: 1;
@@ -7603,7 +7603,7 @@
         justify-content: flex-end;
         padding-top: 0px;
         /* background: #0000ff40; */
-      } 
+      }
   .wfrp4e.actor.vehicle-sheet .tab.cargo .encumbrance-header .encumbrance-label,
   .wfrp4e .tab.inventory.active .encumbrance-header .encumbrance-label {
           text-align: right;
@@ -7665,7 +7665,7 @@
           text-align: center;
           flex: 1;
         }
-    
+
     .app.window-app.sheet.wfrp4e.actor.vehicle-sheet .tab.cargo .encumbrance,
       .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .encumbrance {
       margin-top: 0px;
@@ -7679,7 +7679,7 @@
       box-shadow: 0px 0px 1px inset black;
       background: none;
       height: 25px;
-    }   
+    }
     .app.window-app.sheet.wfrp4e.actor.vehicle-sheet .tab.cargo .encumbrance-text,
     .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .encumbrance-text {
       margin-top: 0px;
@@ -7700,7 +7700,7 @@
       position: relative;
       top: -1px;
       left: -2px;
-    }     
+    }
     .app.window-app.sheet.wfrp4e.actor.vehicle-sheet .tab.cargo .encumbrance-bar,
     .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .encumbrance-bar {
         background: none;
@@ -8279,7 +8279,7 @@
     }
 
     /* CONTAINER - LEVEL 1 */
-    
+
     .app.window-app.sheet.wfrp4e.actor.vehicle-sheet .cargo .container .inventory-header.inventory-container,
       .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .inventory-header.inventory-container.level-1 {
       width: 100%;
@@ -8944,7 +8944,7 @@
 
     /* CONTAINER - LEVEL 4 */
     .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .inventory-header.inventory-container.level-4 {
-      width: 94%; 
+      width: 94%;
       height: 40px;
       margin-top: 3px;
       padding: 0px 2px 0px 2px;
@@ -9404,7 +9404,7 @@
     .app.window-app.sheet.wfrp4e.actor .tab.notes.active .note-section.label:last-of-type {
     margin: 6px 0px 0px 0px;
   }
-  
+
 .limited .tab.notes.active .note-section.biography .editor {
   height: 100%;
   width: 100%;
@@ -9427,7 +9427,7 @@
       border-top: none;
     }
 
-    .app.window-app.sheet.wfrp4e.actor .description .note-section.editor-section .editor, 
+    .app.window-app.sheet.wfrp4e.actor .description .note-section.editor-section .editor,
     .app.window-app.sheet.wfrp4e.actor .tab.notes.active .note-section.biography .editor,
     .app.window-app.sheet.wfrp4e.actor .tab.notes.active .note-section.gmnotes .editor {
       width: 100%;
@@ -9563,7 +9563,7 @@
     border: 1px solid #736953a6;
     font-family: var(--actor-label-font-family);
     font-size: var(--actor-label-font-size);
-    font-weight: var(--actor-label-font-weight); 
+    font-weight: var(--actor-label-font-weight);
     color: var(--actor-label-color);
     background: none;
     box-shadow: 0 0 10px #6b3a0f87 inset;
@@ -9595,7 +9595,7 @@
       flex-grow: 0;
       /* background: red; */
       text-align: center;
-    } 
+    }
   .app.window-app.sheet.wfrp4e.actor  .inventory-list.psychology-list {
     overscroll-behavior-x: unset;
     overflow-x: hidden;
@@ -9846,7 +9846,7 @@
         /* background: #0066ff; */
         margin-left: 0px;
       }
-       
+
   .app.window-app.sheet.wfrp4e.actor  .inventory-header.disease-header {
     width: 100%;
     height: 20px;
@@ -9991,7 +9991,7 @@
         /* background: #0066ff; */
         margin-left: 0px;
       }
-    
+
 /*************************************************************/
 /*************************************************************/
 
@@ -10078,7 +10078,7 @@
   }
 
 /* ==================== (D) PERSONAL DETAILS ================== */
- 
+
 
   /* FIRST ROW */
   .app.window-app.sheet.wfrp4e.actor .general .characteristics {
@@ -10100,7 +10100,7 @@
     grid-gap: 0px;
     background: none;
     border: 1px solid #736953a6;
-  }   
+  }
   .app.window-app.sheet.wfrp4e.actor .general .characteristics-table .table-header {
     font-family: var(--actor-label-font-family);
     font-size: var(--actor-label-font-size);
@@ -10118,14 +10118,14 @@
     /* margin: 4px 4px; */
     padding: 1px 0px 0px 0px;
     /* border-radius: 5px; */
-  }  
+  }
   .app.window-app.sheet.wfrp4e.actor .general .characteristics-table .table-header:nth-of-type(10)  {
     border-right: none;
     /* background: red; */
-  }  
+  }
     .app.window-app.sheet.wfrp4e.actor .general .characteristics-table .table-header .header-block {
       padding-top: 0px;
-    }  
+    }
     .app.window-app.sheet.wfrp4e.actor .general .characteristics-table .table-header .header-block .advancement-indicator {
       position: fixed;
       margin-top: -3px;
@@ -10515,7 +10515,7 @@
     height: 22px;
     padding: 5px 0px 0px 0px;
     }
-        
+
 
   .wfrp4e.actor .randomize-buttons {
     font-family: CaslonPro;
@@ -10561,7 +10561,7 @@
       vertical-align: middle;
       box-shadow: 0 0 10px #00000052 inset;
       position: relative;
-      top: -1px;    
+      top: -1px;
     }
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -10582,7 +10582,7 @@
     padding: 0px;
     /* background: url(../ui/ActorSheet-TabBackground.webp); */
   }
-  
+
   /* ================== 3. PENALTIES ========================== */
     .app.window-app.sheet.wfrp4e.actor.npc-sheet .tab.main.active .penalties {
       height: 24px;
@@ -10682,7 +10682,7 @@
     border: 1px dotted #463a3a;
     box-shadow: none;
   }
-  
+
   /* SECOND ROW */
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -11067,11 +11067,11 @@
           width: 22px;
         }
 
-/* ==================== (H) MAGIC TAB ========================= */   
+/* ==================== (H) MAGIC TAB ========================= */
 
- 
 
-/* ==================== (K) NOTES TAB ========================= */  
+
+/* ==================== (K) NOTES TAB ========================= */
   .app.window-app.sheet.wfrp4e.actor.creature-sheet .tab.notes.active {
     display: inline-block;
     /* height: 352px; */
@@ -11081,7 +11081,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     /* background: blue; */
-  }    
+  }
 
   .app.window-app.sheet.wfrp4e.actor.creature-sheet .tab.notes.active .inventory-header.trait-header {
     width: 100%;
@@ -11208,7 +11208,7 @@
         flex-grow: 0;
         /* background: #0066ff; */
         margin-left: 0px;
-      }      
+      }
 /*************************************************************/
 /*************************************************************/
 
@@ -11282,7 +11282,7 @@
 /*************************************************************/
 
 #navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
-  cursor: default; 
+  cursor: default;
   color: #FFF;
   background: url(../ui/sidebar_button-background_red.webp) repeat;
   background-origin: padding-box;
@@ -11293,7 +11293,7 @@
 }
 
 #navigation #nav-toggle {
-  cursor: default; 
+  cursor: default;
   color: #FFF;
   background: url(../ui/sidebar_button-background_cyan.webp) repeat;
   background-origin: padding-box;
@@ -11308,7 +11308,7 @@
 }
 
 #navigation #scene-list .scene.nav-item {
-  cursor: default; 
+  cursor: default;
   color: #FFF;
   background: url(../ui/sidebar_button-background_cyan.webp) repeat;
   background-origin: padding-box;
@@ -11351,7 +11351,7 @@
 /*=============== XI. SCENE CONTROLS ========================*/
 /*************************************************************/
 #controls .scene-control.active, #controls .control-tool.active, #controls .scene-control:hover, #controls .control-tool:hover {
-cursor: default; 
+cursor: default;
 color: #FFF;
 background: url(../ui/sidebar_button-background_red.webp) repeat !important;
 background-origin: padding-box !important;
@@ -11374,8 +11374,8 @@ color: #BBB !important;
 text-align: center !important;
 border: 1px solid #000 !important;
 border-radius: 5px !important;
-cursor: pointer !important; 
-cursor: default !important; 
+cursor: pointer !important;
+cursor: default !important;
 color: #FFF !important;
 background: url(../ui/sidebar_button-background_cyan.webp) repeat !important;
 background-origin: padding-box !important;
@@ -11587,7 +11587,7 @@ border-image-outset: 0px !important;
         font-weight: 500;
         font-size: var(--font-size-16);
       }
-      
+
       #homebrew-settings .form-group input,
         #client-settings .form-group input {
         border-left: 1px solid #736953a6;
@@ -11818,7 +11818,7 @@ border-image-outset: 0px !important;
         background: #adadad !important;
         box-shadow: 0px 0px 3px black inset !important;
         position: relative;
-        top: 5px;    
+        top: 5px;
       }
 
 /*************************************************************/
@@ -11953,9 +11953,9 @@ font-family: var(--actor-input-font-family);
       text-align: center;
     }
     .window-app.dialog .dialog-content .dialog-row .bonus-column .prefill-tooltip > div > div {
-      border-radius: 50%; 
-      width: 27px; 
-      height: 27px; 
+      border-radius: 50%;
+      width: 27px;
+      height: 27px;
       padding: 6px;
       max-width: 27px;
       font-weight: bold;
@@ -11963,7 +11963,7 @@ font-family: var(--actor-input-font-family);
       color: #CCC;
       display: inline-block;
     }
-  
+
   .window-app.dialog .window-content .dialog-content .dialog-row .talent-selector {
     display: flex;
     flex: 1;
@@ -12002,7 +12002,7 @@ font-family: var(--actor-input-font-family);
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
   .window-app.dialog input[name="hitLocation"] {
     position: relative;
     top: 4px;
@@ -12123,7 +12123,7 @@ font-family: var(--actor-input-font-family);
       /* font-size: var(--actor-input-font-size); */
       font-weight: var(--actor-input-font-weight);
     }
-    .app.window-app .form-group, 
+    .app.window-app .form-group,
     .app.window-app .form-group-stacked {
       clear: both;
       display: flex;
@@ -12150,7 +12150,7 @@ font-family: var(--actor-input-font-family);
         background: #080808;
         flex: 3
       }
-      
+
       .trait-sheet .tab.details input[type="text"]{
         border: none;
         box-shadow: none;
@@ -12217,11 +12217,11 @@ font-family: var(--actor-input-font-family);
         cursor: pointer;
         margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
         box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-      } 
+      }
       .app.window-app .form-group input[type="range"]::-webkit-slider-runnable-track {
         background-image: linear-gradient(to right, #820f0f , #82820d);
       }
-  
+
   .app.window-app.dialog .window-content .dialog-content h3 {
     margin: 3px 0px;
     padding: 4px 3px 1px 3px;
@@ -12274,7 +12274,7 @@ font-family: var(--actor-input-font-family);
     color: var(--major-button-color);
   }
 
-  .app.window-app.wfrp4e-dialog .dialog-buttons 
+  .app.window-app.wfrp4e-dialog .dialog-buttons
   {
     flex : 0 0 35px;
   }
@@ -12318,7 +12318,7 @@ font-family: var(--actor-input-font-family);
       background: #080808;
       margin-right: 0px;
     }
-  .app.window-app.sheet.scene-sheet .fas.fa-ruler-combined { 
+  .app.window-app.sheet.scene-sheet .fas.fa-ruler-combined {
     display: contents;
     font-size: var(--font-size-16);
     color: #b9b9b9;
@@ -12406,7 +12406,7 @@ font-family: var(--actor-input-font-family);
       visibility: hidden;
     }
 
-    #actor-settings .form-header h3, 
+    #actor-settings .form-header h3,
     .app.window-app.sheet.scene-sheet .window-content h3 {
       margin: 3px 0px;
       padding: 4px 3px 1px 3px;
@@ -12419,7 +12419,7 @@ font-family: var(--actor-input-font-family);
       background: #290a0ad9;
       text-align: center;
     }
-  
+
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(14) label,
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(15) label,
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(16) label,
@@ -12429,12 +12429,12 @@ font-family: var(--actor-input-font-family);
     .app.window-app.sheet.scene-sheet .form-group label span {
       font-size: var(--font-size-14);
       color: #7d7d7d;
-    } 
+    }
     .app.window-app.sheet.scene-sheet .form-group .file-picker {
       max-width: 60px;
       margin: 0 3px 0px -2px !important;
       box-shadow: 0px 0px 5px black inset;
-    } 
+    }
     #sound-config .form-group .file-picker {
       margin: 0px 3px 0px 0px;
     }
@@ -12457,7 +12457,7 @@ font-family: var(--actor-input-font-family);
     }
 
     /* Token Vision */
-    .app.window-app.sheet.scene-sheet .form-group input[type="checkbox"] { 
+    .app.window-app.sheet.scene-sheet .form-group input[type="checkbox"] {
       position: relative;
       top: 7px;
       margin-left: 6px;
@@ -12467,7 +12467,7 @@ font-family: var(--actor-input-font-family);
     .app.window-app.sheet.scene-sheet input[type="range"] + .range-value,
     .token-sheet .range-value,
     #drawing-config .range-value,
-    #sound-config .range-value,  
+    #sound-config .range-value,
     #light-config .range-value {
       display: block;
       flex: 0 1 48px;
@@ -12527,7 +12527,7 @@ font-family: var(--actor-input-font-family);
       border: 1px solid #736953a6;
       padding: 4px;
     }
-  
+
 
   /* ================== 5. CREATE ACTOR ENTITY ================ */
     .app.window-app.dialog .dialog-content #entity-create .form-group .notes {
@@ -12716,7 +12716,7 @@ font-family: var(--actor-input-font-family);
       margin: 4px 0px 0px 0px;
       padding: 4px 5px;
       border: 1px solid #5d513e;
-      background: #1f1f1fb5;    
+      background: #1f1f1fb5;
     }
     .token-sheet .tab[data-tab="image"] button {
       margin: 0 3px 0px 3px !important;
@@ -12742,7 +12742,7 @@ font-family: var(--actor-input-font-family);
       cursor: pointer;
       margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
       box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-    } 
+    }
     .token-sheet .tab[data-tab="image"] input[type="range"]::-webkit-slider-runnable-track {
       background-image: linear-gradient(to right, #820f0f , #82820d);
     }
@@ -12782,7 +12782,7 @@ font-family: var(--actor-input-font-family);
       opacity: 0.75;
       box-shadow: 0px 0px 4px inset black;
   }
-    
+
     .token-sheet .tab[data-tab="vision"] .notes {
       font-family: var(--actor-input-font-family);
       font-size: var(--actor-input-font-size);
@@ -12857,7 +12857,7 @@ font-family: var(--actor-input-font-family);
       border-left: none;
       border-right: none;
       box-shadow: 0px 0px 10px inset black;
-      background: #352516;  
+      background: #352516;
     }
 
     .token-sheet .range-value {
@@ -12970,7 +12970,7 @@ font-family: var(--actor-input-font-family);
       cursor: pointer;
       margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
       box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-    } 
+    }
     #drawing-config .tab[data-tab="image"] input[type="range"]::-webkit-slider-runnable-track {
       background-image: linear-gradient(to right, #820f0f , #82820d);
     }
@@ -13003,7 +13003,7 @@ font-family: var(--actor-input-font-family);
       opacity: 0.75;
       box-shadow: 0px 0px 4px inset black;
     }
-    
+
     #drawing-config .tab[data-tab="vision"] .notes {
       text-align: center;
     }
@@ -13064,7 +13064,7 @@ font-family: var(--actor-input-font-family);
       border-left: none;
       border-right: none;
       box-shadow: 0px 0px 10px inset black;
-      background: #352516;  
+      background: #352516;
     }
     #drawing-config .file-picker {
       margin: 0px;
@@ -13122,8 +13122,8 @@ font-family: var(--actor-input-font-family);
         opacity: 0.9;
         background: none;
         width: 100%;
-        margin: 0px;    
-      }      
+        margin: 0px;
+      }
       .window-app.app.journal-sheet .window-content select[name="folder"] {
         background: none;
         border: 1px solid #5a5a5a;
@@ -13157,7 +13157,7 @@ font-family: var(--actor-input-font-family);
       /* box-shadow: inset 0 0 20px #000000; */
       background: url(../ui/sidebar_button-background_red.webp) repeat;
       background-origin: padding-box;
-    } 
+    }
 
     .window-app.app.journal-sheet form.editable .editor {
       padding: 4px;
@@ -13224,7 +13224,7 @@ font-family: var(--actor-input-font-family);
       /* box-shadow: inset 0 0 20px #000000; */
       background: url(../ui/sidebar_button-background_red.webp) repeat;
       background-origin: padding-box;
-    }    
+    }
       .window-app.journal-sheet.image-popout .form-group button i {
         display: block;
       }
@@ -13246,9 +13246,9 @@ font-family: var(--actor-input-font-family);
     }
 
 
-  /* Journal V2 */ 
+  /* Journal V2 */
 
-  
+
   .window-app.app.journal-sheet.journal-entry-page .window-content,
     .sheet.journal-entry .journal-entry-content   {
     background: url(../ui/frames/parchment-texture.webp);
@@ -13261,7 +13261,7 @@ font-family: var(--actor-input-font-family);
 
 
     .window-app.app .prosemirror .editor-menu button {
-    width: unset; 
+    width: unset;
     margin: unset;
     border-image: unset;
     border-image-width: unset;
@@ -13547,7 +13547,7 @@ font-family: var(--actor-input-font-family);
     }
 
 
-  
+
 /******************************************************************/
 /******************************************************************/
 
@@ -13567,7 +13567,7 @@ font-family: var(--actor-input-font-family);
       width: 600px;
       height: 60px;
       margin-left: 15px
-    }    
+    }
 
     #hotbar #action-bar {
       flex: 1;
@@ -13592,7 +13592,7 @@ font-family: var(--actor-input-font-family);
         border-image-width: 6px 6px 6px 6px;
         border-image-outset: 0px 0px 0px 0px;
         border-radius: 0px;
-      }   
+      }
         #hotbar .macro .macro-key {
           position: absolute;
           top: 2px;
@@ -13619,7 +13619,7 @@ font-family: var(--actor-input-font-family);
         position: relative;
         top: 4px;
       }
-    
+
 /******************************************************************/
 /******************************************************************/
 
@@ -13665,7 +13665,7 @@ box-shadow: 0 0 84px #000000 inset;
 /*************************************************************/
 /*************************************************************/
 
-.app.window-app.sheet table > * 
+.app.window-app.sheet table > *
 {
   color: black
 }
@@ -13721,7 +13721,7 @@ font-style : normal;
   line-height: 30px;
   border: none;
   background: url(../ui/frames/window-app-header-blank.webp) repeat;
-} 
+}
   .window-app.dialog.cast-channel .window-header .window-title {
     position: absolute;
     top: 60px;
@@ -13823,7 +13823,7 @@ font-style : normal;
     border-image-outset: 0px;
     background: url(../ui/sidebar_button-background_red.webp) repeat;
     background-origin: padding-box;
-  } 
+  }
 
   .window-content .notes {
     color: #BBB;
@@ -13841,7 +13841,7 @@ font-style : normal;
     max-width: 50px;
     max-height: 50px;
     border: none;
-    margin: -5px 5px 2px 0px;  
+    margin: -5px 5px 2px 0px;
   }
 
   #chat-log .message .message-header .sender-image.img-rider{
@@ -14105,7 +14105,7 @@ font-style : normal;
       .app.window-app.sheet.item-sheet .configure-sheet {
         background: url(../ui/buttons/button-configure-sheet.webp);
       }
-      
+
       .compendium.directory .entry-name {
         color: #CCC;
       }
@@ -14153,7 +14153,7 @@ font-style : normal;
           background: #290a0ad9;
         }
 
-      #module-management .list-filters .expand 
+      #module-management .list-filters .expand
       {
           height: unset;
           margin: unset;
@@ -14202,7 +14202,7 @@ font-style : normal;
   position: relative;
   top: 5px;
   cursor: pointer;
-}  
+}
 
 .chat-buttons {
   position: relative;
@@ -14313,7 +14313,7 @@ font-style : normal;
 }
 
 .filepicker .tabs {
-  color: #CCC 
+  color: #CCC
 }
 
 .sidebar-popout .directory-list .directory-item,
@@ -14409,7 +14409,7 @@ font-style : normal;
 }
 .attribute-career-buttons .chargen-button {
   left : 0px;
-  
+
 }
 
 .attribute-career-buttons .chargen-button.careerReroll {
@@ -14459,7 +14459,7 @@ font-style : normal;
   width: fit-content;
   padding: 3px;
   margin: 5px;
-} 
+}
 
 .gen-talents,
 .gen-skills {
@@ -14512,7 +14512,7 @@ input.card-edit {
   width: 40px;
   max-width: 40px;
 }
-.wfrp4e.item-sheet .sheet-condition 
+.wfrp4e.item-sheet .sheet-condition
 {
   width: calc(100% - 30px);
   min-width: 32px;
@@ -14811,7 +14811,7 @@ min-width: 100px;
   height: 100%;
 }
 
-.wfrp4e.table-sheet .tabs .item { 
+.wfrp4e.table-sheet .tabs .item {
   height: 100%;
   margin: 3px 10px;
   padding: 4px 3px 1px 3px;
@@ -14825,10 +14825,10 @@ min-width: 100px;
   background: #0a1829d9;
 }
 
-.wfrp4e.table-sheet .tabs .item:hover { 
+.wfrp4e.table-sheet .tabs .item:hover {
   box-shadow: 0 0 8px #ff9f00 !important;
 }
-.wfrp4e.table-sheet .tabs .item.active { 
+.wfrp4e.table-sheet .tabs .item.active {
   background: #290a0ad9;
 }
 
@@ -14962,7 +14962,7 @@ background : #0a1829d9
     top: 8px;
 }
 
-#wfrp4e-browser .window-content 
+#wfrp4e-browser .window-content
 {
   background: url(../ui/frames/window-app-background-bookshelf.webp);
   color: white;
@@ -14977,7 +14977,7 @@ background : #0a1829d9
   flex: 1;
 }
 
-#wfrp4e-browser .item-filter 
+#wfrp4e-browser .item-filter
 {
   display: flex;
   flex-direction: column;
@@ -15231,7 +15231,7 @@ background : #0a1829d9
   color: #CCC
 }
 
-#calendar  { 
+#calendar  {
   bottom: 122px !important;
     left: 14px !important;
 }
@@ -15719,7 +15719,7 @@ background-image: linear-gradient(to right, #820f0f , #82820d);
     font-weight: bold;
     text-shadow: 1px 1px #000;
     justify-content: space-between;
-  } 
+  }
   #permissions-config header.table-header .index {
     margin: 0px 0px 0px 0px;
     min-width: 186px;
@@ -15755,7 +15755,7 @@ background-image: linear-gradient(to right, #820f0f , #82820d);
       padding: 5px;
       border-bottom: 1px dotted #ffffff63;
     }
-   
+
 
 #av-config .sheet-tabs {
   flex: 0 0 32px;
@@ -16035,7 +16035,7 @@ input[name="dd-import.importPath"] {
 #world-config .form-group-stacked .world-desc {
   text-align: center;
 
-} 
+}
   #world-config .form-group-stacked .editor {
   font-family: var(--actor-input-font-family);
   font-size: var(--actor-input-font-size);
@@ -16199,7 +16199,7 @@ box-shadow: none;
 
 .app.window-app .grudge-list::-webkit-scrollbar-button:start:decrement {
   background: initial;
-} 
+}
 .app.window-app .grudge-list::-webkit-scrollbar-button:end:increment {
   background: initial;
 }
@@ -16725,20 +16725,20 @@ hr,
 
 .gm-screen-app button {
   margin: 0px 5px 6px 5px !important;
-  padding: 2px 0px 0px 0px !important; 
-  height: 34px !important; 
-  border: 1px solid black !important; 
-  border-image: url(../ui/footer-button.webp) 10 repeat !important; 
-  border-image-width: 4px !important; 
-  border-image-outset: 0px !important; 
-  box-shadow: 4px 4px 1px #00000085 !important; 
-  background: url(../ui/sidebar_button-background_red.webp) repeat !important; 
-  background-origin: padding-box !important; 
-  color: #dadada !important; 
+  padding: 2px 0px 0px 0px !important;
+  height: 34px !important;
+  border: 1px solid black !important;
+  border-image: url(../ui/footer-button.webp) 10 repeat !important;
+  border-image-width: 4px !important;
+  border-image-outset: 0px !important;
+  box-shadow: 4px 4px 1px #00000085 !important;
+  background: url(../ui/sidebar_button-background_red.webp) repeat !important;
+  background-origin: padding-box !important;
+  color: #dadada !important;
   font-family: CaslonAntique;
-  font-size: var(--font-size-20) !important; 
-  font-weight: 500 !important; 
-  text-shadow: 0px 0px 1px #00000063 !important; 
+  font-size: var(--font-size-20) !important;
+  font-weight: 500 !important;
+  text-shadow: 0px 0px 1px #00000063 !important;
 }
 
 /* Simple Calendar Integration */
@@ -17001,8 +17001,8 @@ hr,
     border-image-source: url(../ui/players-border.webp) !important;
 }
 
-.simple-calendar.classic .fsc-jg .fsc-ya.fsc-qh:first-child, 
-.simple-calendar.classic .fsc-jg .fsc-ya.fsc-qh, 
+.simple-calendar.classic .fsc-jg .fsc-ya.fsc-qh:first-child,
+.simple-calendar.classic .fsc-jg .fsc-ya.fsc-qh,
 .simple-calendar.classic .fsc-jg .fsc-ya:first-child,
 .simple-calendar.classic .fsc-jg .fsc-ya.fsc-ab,
 .simple-calendar.classic .fsc-jg .fsc-ya.fsc-ab:first-child {
@@ -17026,7 +17026,7 @@ hr,
 .journal-image img{
   border: none;
   object-fit: contain;
-} 
+}
 .journal-image {
   display: flex;
   width:100%;
