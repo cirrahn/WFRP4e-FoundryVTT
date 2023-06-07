@@ -1,0 +1,21 @@
+.skin-naggaroth {
+	.app.window-app.sheet.wfrp4e.actor .window-header {
+		margin: 0 7px 0 0;
+	}
+
+	.app.window-app.sheet.wfrp4e.actor {
+		border-radius: 8px;
+		background: #544f43;
+	}
+
+	.app.window-app.sheet.wfrp4e.actor .window-content {
+		border-image-outset: 60px 14px 17px 0;
+		padding: 7px 11px 0 5px;
+		margin: 0;
+	}
+
+	.app.window-app.sheet.wfrp4e.actor .window-resizable-handle {
+		bottom: 4px;
+		right: -1px;
+	}
+}
