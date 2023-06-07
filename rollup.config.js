@@ -40,6 +40,7 @@ export default {
 				dir: process.cwd(),
 				include: [
 					/static(\/.*)?/,
+					/scss(\/.*)?/,
 					"system.json",
 					"template.json",
 				],
