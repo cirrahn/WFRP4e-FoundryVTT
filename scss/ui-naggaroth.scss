@@ -196,7 +196,64 @@
 	#logo {
 		content: url(../ui/naggaroth/logo.webp);
 	}
-	.app.window-app .window-header {
-		border-image: url(../ui/naggaroth/frames/window-app-header-blank.webp) 5 repeat;
+	.app.window-app .dialog-buttons button, .app.window-app .sheet-footer button, .app.window-app .form-group .file-picker, .app.window-app button[type="button"], .app.window-app button[type="submit"], .app.window-app button[type="reset"] {
+		border: 1px solid black;
+		border-image: url(../ui/naggaroth/footer-button.webp) 10 repeat;
+		border-image-width: 4px;
+		border-image-outset: 0px;
+		background: url(../ui/naggaroth/sidebar_button-background_red.webp) repeat;
+		background-origin: padding-box;
+	}
+
+	.window-app .window-header .window-title .document-id-link, .window-app .window-header .document-id-link {
+		background: url(../ui/naggaroth/buttons/button-id.webp);
+		background-position-x: 1px;
+		background-position-y: -4px;
+	}
+	.app.window-app .window-header .configure-sheet {
+		background: url(../ui/naggaroth/buttons/button-configure-sheet.webp);
+	}
+	.app.window-app .window-header .configure-token {
+		background: url(../ui/naggaroth/buttons/button-configure-token.webp);
+	}
+	.app.window-app .window-header .close {
+		background: url(../ui/naggaroth/buttons/button-close.webp);
+	}
+
+	.window-app.dialog.wfrp4e-dialog .window-content {
+		border-width: 10px;
+		border-image: url(../ui/naggaroth/window-app-dialog-content.webp) 5 repeat;
+		border-image-slice: 10 13 13 13;
+		border-image-width: 10px 13px 13px 13px;
+		border-image-outset: 8px;
+	}
+
+	.app.window-app .window-content {
+		background: url(../ui/naggaroth/frames/window-app-background-bookshelf.webp);
+		background-position: -43px -120px;
+	}
+
+	.window-app.dialog.wfrp4e-dialog .window-header {
+		background: url(../ui/naggaroth/frames/window-app-header-blank.webp) repeat;
+	}
+
+	#chat-controls i {
+		width: 30px;
+		height: 30px;
+		position: relative;
+		top: 3px;
+		background: url(../ui/naggaroth/buttons/chat-button-d20.webp);
+	}
+
+	#chat-controls .control-buttons .export-log i {
+		background: url(../ui/naggaroth/buttons/chat-button-export.webp);
+		position: relative;
+		right: 20px;
+	}
+
+	#chat-controls .control-buttons .delete i {
+		background: url(../ui/naggaroth/buttons/chat-button-clear.webp);
+		position: relative;
+		right: 10px;
 	}
 }

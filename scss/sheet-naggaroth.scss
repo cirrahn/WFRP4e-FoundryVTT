@@ -9,8 +9,10 @@
 	}
 
 	.app.window-app.sheet.wfrp4e.actor .window-content {
-		border-image-outset: 65px 18px 21px 0;
+		border-image: url(../ui/naggaroth/frames/actor-sheet-window-content.webp) 4 repeat;
+		border-image-slice: 106 fill;
 		border-image-width: 28.04mm;
+		border-image-outset: 65px 18px 21px 0;
 		padding: 7px 11px 0 5px;
 		margin: 0;
 	}
@@ -19,4 +21,6 @@
 		bottom: 4px;
 		right: -1px;
 	}
+
+
 }
