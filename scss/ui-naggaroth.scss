@@ -193,4 +193,10 @@
 	#sidebar.collapsed .collapse {
 		background: url(../ui/naggaroth/sidebar-button-settings-active.webp);
 	}
+	#logo {
+		content: url(../ui/naggaroth/logo.webp);
+	}
+	.app.window-app .window-header {
+		border-image: url(../ui/naggaroth/frames/window-app-header-blank.webp) 5 repeat;
+	}
 }
