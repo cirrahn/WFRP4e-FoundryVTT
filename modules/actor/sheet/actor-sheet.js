@@ -49,6 +49,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		this.element.find(".import").attr({"data-tooltip": game.i18n.localize("SHEET.Import"), "data-tooltip-direction": "UP"});
 
 		WFRP_Utility.replacePopoutTokens(this.element); // Opposed attackers show as tokens, replace popout versions with normal
+		WFRP_Utility.addLinkSources(this.element);
 
 		this._refocus(this._element);
 	}
@@ -123,7 +124,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 
 		sheetData.attacker = this.actor.attacker;
 
-		if (this.actor.type !== "vehicle") {
+		if (this.actor.type != "vehicle") {
 			sheetData.effects.system = game.wfrp4e.utility.getSystemEffects();
 		}
 
@@ -144,8 +145,8 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let items = {};
 
 		items.skills = {
-			basic: sheetData.actor.getItemTypes("skill").filter(i => i.advanced.value === "bsc" && i.grouped.value === "noSpec"),
-			advanced: sheetData.actor.getItemTypes("skill").filter(i => i.advanced.value === "adv" || i.grouped.value === "isSpec"),
+			basic: sheetData.actor.getItemTypes("skill").filter(i => i.advanced.value == "bsc" && i.grouped.value == "noSpec"),
+			advanced: sheetData.actor.getItemTypes("skill").filter(i => i.advanced.value == "adv" || i.grouped.value == "isSpec"),
 		};
 
 		items.careers = sheetData.actor.getItemTypes("career").reverse();
@@ -160,13 +161,13 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		items.vehicleMods = sheetData.actor.getItemTypes("vehicleMod");
 
 		items.grimoire = {
-			petty: sheetData.actor.getItemTypes("spell").filter(i => i.lore.value === "petty" || i.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")),
-			lore: sheetData.actor.getItemTypes("spell").filter(i => (i.lore.value !== "petty" && i.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) || !i.lore.value),
+			petty: sheetData.actor.getItemTypes("spell").filter(i => i.lore.value == "petty" || i.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")),
+			lore: sheetData.actor.getItemTypes("spell").filter(i => (i.lore.value != "petty" && i.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) || !i.lore.value),
 		};
 
 		items.prayers = {
-			blessings: sheetData.actor.getItemTypes("prayer").filter(i => i.prayerType.value === "blessing"),
-			miracles: sheetData.actor.getItemTypes("prayer").filter(i => i.prayerType.value === "miracle" || !i.prayerType.value),
+			blessings: sheetData.actor.getItemTypes("prayer").filter(i => i.prayerType.value == "blessing"),
+			miracles: sheetData.actor.getItemTypes("prayer").filter(i => i.prayerType.value == "miracle" || !i.prayerType.value),
 		};
 
 		items.equipped = {
@@ -217,7 +218,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			},
 			clothingAccessories: {
 				label: game.i18n.localize("WFRP4E.TrappingType.ClothingAccessories"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "clothingAccessories"),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "clothingAccessories"),
 				toggle: true,
 				toggleName: game.i18n.localize("Worn"),
 				show: false,
@@ -226,35 +227,35 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			},
 			booksAndDocuments: {
 				label: game.i18n.localize("WFRP4E.TrappingType.BooksDocuments"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "booksAndDocuments"),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "booksAndDocuments"),
 				show: false,
 				collapsed: collapsed?.booksAndDocuments,
 				dataType: "trapping",
 			},
 			toolsAndKits: {
 				label: game.i18n.localize("WFRP4E.TrappingType.ToolsKits"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "toolsAndKits" || i.trappingType.value === "tradeTools"),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "toolsAndKits" || i.trappingType.value == "tradeTools"),
 				show: false,
 				collapsed: collapsed?.toolsAndKits,
 				dataType: "trapping",
 			},
 			foodAndDrink: {
 				label: game.i18n.localize("WFRP4E.TrappingType.FoodDrink"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "foodAndDrink"),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "foodAndDrink"),
 				show: false,
 				collapsed: collapsed?.foodAndDrink,
 				dataType: "trapping",
 			},
 			drugsPoisonsHerbsDraughts: {
 				label: game.i18n.localize("WFRP4E.TrappingType.DrugsPoisonsHerbsDraughts"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "drugsPoisonsHerbsDraughts"),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "drugsPoisonsHerbsDraughts"),
 				show: false,
 				collapsed: collapsed?.drugsPoisonsHerbsDraughts,
 				dataType: "trapping",
 			},
 			misc: {
 				label: game.i18n.localize("WFRP4E.TrappingType.Misc"),
-				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "misc" || !i.trappingType.value),
+				items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "misc" || !i.trappingType.value),
 				show: true,
 				collapsed: collapsed?.misc,
 				dataType: "trapping",
@@ -271,7 +272,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		// Money and ingredients are not in inventory object because they need more customization - note in actor-inventory.html that they do not exist in the main inventory loop
 		const ingredients = {
 			label: game.i18n.localize("WFRP4E.TrappingType.Ingredient"),
-			items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value === "ingredient"),
+			items: sheetData.actor.getItemTypes("trapping").filter(i => i.trappingType.value == "ingredient"),
 			show: false,
 			collapsed: collapsed?.ingredients,
 			dataType: "trapping",
@@ -289,7 +290,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		const misc = {};
 		let inContainers = []; // inContainers is the temporary storage for items within a container
 
-		if (sheetData.actor.hasSpells || sheetData.actor.type === "vehicle") { inContainers = this._filterItemCategory(ingredients, inContainers); } else { categories.misc.items = categories.misc.items.concat(ingredients.items); }
+		if (sheetData.actor.hasSpells || sheetData.actor.type == "vehicle") { inContainers = this._filterItemCategory(ingredients, inContainers); } else { categories.misc.items = categories.misc.items.concat(ingredients.items); }
 
 		for (let itemCategory in categories) { inContainers = this._filterItemCategory(categories[itemCategory], inContainers); }
 
@@ -308,8 +309,8 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		{
 			// All items referencing (inside) that container
 			let itemsInside = inContainers.filter(i => i.location.value == cont.id);
-			cont.carrying = itemsInside.filter(i => i.type !== "container"); // cont.carrying -> items the container is carrying
-			cont.packsInside = itemsInside.filter(i => i.type === "container"); // cont.packsInside -> containers the container is carrying
+			cont.carrying = itemsInside.filter(i => i.type != "container"); // cont.carrying -> items the container is carrying
+			cont.packsInside = itemsInside.filter(i => i.type == "container"); // cont.packsInside -> containers the container is carrying
 			cont.carries.current = itemsInside.reduce(function (prev, cur) { // cont.holding -> total encumbrance the container is holding
 				return Number(prev) + Number(cur.encumbrance.value);
 			}, 0);
@@ -411,7 +412,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		// Change out hit locations if using custom table
 		let table = game.wfrp4e.tables.findTable(sheetData.system.details.hitLocationTable.value);
 		for (let loc in AP) {
-			if (loc === "shield" || loc === "shieldDamage") { continue; }
+			if (loc == "shield" || loc == "shieldDamage") { continue; }
 			if (table) {
 				try {
 					let result = table.results.find(r => r.getFlag("wfrp4e", "loc") == loc);
@@ -429,7 +430,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 	}
 
 	_addEncumbranceData (sheetData) {
-		if (this.type !== "vehicle") { sheetData.system.status.encumbrance.pct = Math.min((sheetData.system.status.encumbrance.current / sheetData.system.status.encumbrance.max * 100), 100); }
+		if (this.type != "vehicle") { sheetData.system.status.encumbrance.pct = Math.min((sheetData.system.status.encumbrance.current / sheetData.system.status.encumbrance.max * 100), 100); }
 	}
 
 	addMountData (data) {
@@ -471,7 +472,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
  */
 	spellDialog (spell, options = {}) {
 		// Do not show the dialog for Petty spells, just cast it.
-		if (spell.lore.value === "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) {
+		if (spell.lore.value == "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) {
 			this.actor.setupCast(spell, options).then(setupData => {
 				this.actor.castTest(setupData);
 			});
@@ -818,7 +819,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let ch = ev.currentTarget.attributes["data-char"].value;
 		let newValue = Number(ev.target.value);
 
-		if (this.actor.type === "character") {
+		if (this.actor.type == "character") {
 			let resolved = await WFRP_Utility.advancementDialog(ch, newValue, "characteristic", this.actor);
 
 			// If not resolved, reset characteristic ui value
@@ -839,7 +840,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		ev.preventDefault();
 		let itemId = ev.target.attributes["data-item-id"].value;
 		let itemToEdit = this.actor.items.get(itemId);
-		if (this.actor.type === "character") {
+		if (this.actor.type == "character") {
 			let resolved = await WFRP_Utility.advancementDialog(
 				itemToEdit,
 				Number(ev.target.value),
@@ -1026,7 +1027,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		}
 
 		let memorize = true;
-		if (this.actor.type === "character") {
+		if (this.actor.type == "character") {
 			memorize = await WFRP_Utility.memorizeCostDialog(spell, this.actor);
 		}
 
@@ -1057,9 +1058,9 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let toggle = ev.target.attributes["toggle-type"].value;
 		if (ev.button == 2) {
 			let newFlags = duplicate(this.actor.flags);
-			if (toggle === "walk") newFlags.autoCalcWalk = !newFlags.autoCalcWalk;
+			if (toggle == "walk") newFlags.autoCalcWalk = !newFlags.autoCalcWalk;
 
-			else if (toggle === "run") { newFlags.autoCalcRun = !newFlags.autoCalcRun; } else if (toggle === "wounds") { newFlags.autoCalcWounds = !newFlags.autoCalcWounds; } else if (toggle === "critW") { newFlags.autoCalcCritW = !newFlags.autoCalcCritW; } else if (toggle === "corruption") { newFlags.autoCalcCorruption = !newFlags.autoCalcCorruption; } else if (toggle === "encumbrance") { newFlags.autoCalcEnc = !newFlags.autoCalcEnc; }
+			else if (toggle == "run") { newFlags.autoCalcRun = !newFlags.autoCalcRun; } else if (toggle == "wounds") { newFlags.autoCalcWounds = !newFlags.autoCalcWounds; } else if (toggle == "critW") { newFlags.autoCalcCritW = !newFlags.autoCalcCritW; } else if (toggle == "corruption") { newFlags.autoCalcCorruption = !newFlags.autoCalcCorruption; } else if (toggle == "encumbrance") { newFlags.autoCalcEnc = !newFlags.autoCalcEnc; }
 
 			return this.actor.update({ "flags": newFlags });
 		}
@@ -1069,7 +1070,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let itemId = this._getItemId(ev);
 		const disease = this.actor.items.get(itemId).toObject();
 		let type = ev.target.dataset["type"];
-		if (type === "incubation") { disease.system.duration.active = false; }
+		if (type == "incubation") { disease.system.duration.active = false; }
 		if (!isNaN(disease.system[type].value)) {
 			let number = Number(disease.system[type].value);
 			if (ev.button == 0) { return this.actor.decrementDisease(disease); } else { number++; }
@@ -1079,7 +1080,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			try {
 				let rollValue = (await new Roll(disease.system[type].value).roll()).total;
 				disease.system[type].value = rollValue;
-				if (type === "duration") { disease.system.duration.active = true; }
+				if (type == "duration") { disease.system.duration.active = true; }
 			} catch {
 				return ui.notifications.error(game.i18n.localize("ERROR.ParseDisease"));
 			}
@@ -1138,7 +1139,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let id = $(ev.currentTarget).parents(".item").attr("data-item-id");
 
 		let effect = this.actor.populateEffect(id);
-		if (effect.trigger === "apply") { game.wfrp4e.utility.applyEffectToTarget(effect); } else {
+		if (effect.trigger == "apply") { game.wfrp4e.utility.applyEffectToTarget(effect); } else {
 			game.wfrp4e.utility.runSingleEffect(effect, this.actor, effect.item, {actor: this.actor, effect, item: effect.item});
 		}
 	}
@@ -1149,7 +1150,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 
 	_onItemDelete (ev) {
 		let li = $(ev.currentTarget).parents(".item"); let itemId = li.attr("data-item-id");
-		if (this.actor.items.get(itemId).name === "Boo") {
+		if (this.actor.items.get(itemId).name == "Boo") {
 			AudioHelper.play({ src: `${game.settings.get("wfrp4e", "soundPath")}squeek.wav` }, false);
 			return;
 		}
@@ -1190,21 +1191,21 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let itemId = this._getItemId(ev);
 		let item = this.actor.items.get(itemId).toObject();
 		let equippedState;
-		if (item.type === "armour") {
+		if (item.type == "armour") {
 			item.system.worn.value = !item.system.worn.value;
 			equippedState = item.system.worn.value;
-		} else if (item.type === "weapon") {
+		} else if (item.type == "weapon") {
 			item.system.equipped = !item.system.equipped;
 			equippedState = item.system.equipped;
 			let newEqpPoints = item.system.twohanded.value ? 2 : 1;
-			if (game.settings.get("wfrp4e", "limitEquippedWeapons") && this.actor.type !== "vehicle") {
+			if (game.settings.get("wfrp4e", "limitEquippedWeapons") && this.actor.type != "vehicle") {
 				if (this.actor.equipPointsUsed + newEqpPoints > this.actor.equipPointsAvailable && equippedState) {
 					AudioHelper.play({ src: `${game.settings.get("wfrp4e", "soundPath")}/no.wav` }, false);
 					return ui.notifications.error(game.i18n.localize("ErrorLimitedWeapons"));
 				}
 			}
 			setProperty(item, "system.offhand.value", false);
-		} else if (item.type === "trapping" && item.system.trappingType.value === "clothingAccessories") {
+		} else if (item.type == "trapping" && item.system.trappingType.value == "clothingAccessories") {
 			item.system.worn = !item.system.worn;
 			equippedState = item.system.worn;
 		}
@@ -1267,7 +1268,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 
 	async _onAggregateClick (ev) {
 		let itemType = $(ev.currentTarget).attr("data-type");
-		if (itemType === "ingredient") itemType = "trapping";
+		if (itemType == "ingredient") itemType = "trapping";
 		let items = this.actor.getItemTypes(itemType).map(i => i.toObject());
 		for (let i of items) {
 			let duplicates = items.filter(x => x.name == i.name);
@@ -1329,7 +1330,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			if (!subspeciesKey) { subspeciesKey = subspecies; }
 		}
 		await this.actor.update({ "system.details.species.value": speciesKey, "system.details.species.subspecies": subspeciesKey });
-		if (this.actor.type === "character") { return; }
+		if (this.actor.type == "character") { return; }
 		try {
 			let initialValues = await WFRP_Utility.speciesCharacteristics(speciesKey, true, subspeciesKey);
 			let characteristics = this.actor.toObject().system.characteristics;
@@ -1363,7 +1364,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			switch (ev.target.text) {
 				case game.i18n.localize("RANDOMIZER.C"): let creatureMethod = false;
 					let characteristics = this.actor.toObject().system.characteristics;
-					if (this.actor.type === "creature" || !species) creatureMethod = true;
+					if (this.actor.type == "creature" || !species) creatureMethod = true;
 					if (!creatureMethod) {
 						let averageCharacteristics = await WFRP_Utility.speciesCharacteristics(species, true, subspecies);
 						for (let char in characteristics) {
@@ -1478,9 +1479,9 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let header = ev.currentTarget;
 		let data = duplicate(header.dataset);
 
-		if (data.type === "effect") { return this.actor.createEmbeddedDocuments("ActiveEffect", [{ name: game.i18n.localize("New Effect") }]); }
+		if (data.type == "effect") { return this.actor.createEmbeddedDocuments("ActiveEffect", [{ name: game.i18n.localize("New Effect") }]); }
 
-		if (data.type === "vehicle-role" && this.actor.type === "vehicle") {
+		if (data.type == "vehicle-role" && this.actor.type == "vehicle") {
 			let roles = duplicate(this.actor.roles);
 			let newRole = { name: game.i18n.localize("NewRole"), actor: "", test: "", testLabel: "" };
 			roles.push(newRole);
@@ -1488,21 +1489,21 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		}
 
 		// Conditional for creating skills from the skills tab - sets to the correct skill type depending on column
-		if (ev.currentTarget.attributes["data-type"].value === "skill") {
+		if (ev.currentTarget.attributes["data-type"].value == "skill") {
 			data = mergeObject(data,
 				{
 					"system.advanced.value": ev.currentTarget.attributes["data-skill-type"].value,
 				});
 		}
 
-		if (data.type === "trapping") {
+		if (data.type == "trapping") {
 			data = mergeObject(data,
 				{
 					"system.trappingType.value": ev.currentTarget.attributes["item-section"].value,
 				});
 		}
 
-		if (data.type === "ingredient") {
+		if (data.type == "ingredient") {
 			data = mergeObject(data,
 				{
 					"system.trappingType.value": "ingredient",
@@ -1511,15 +1512,15 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		}
 
 		// Conditional for creating spells/prayers from their tabs, create the item with the correct type
-		else if (data.type === "spell" || data.type === "prayer") {
+		else if (data.type == "spell" || data.type == "prayer") {
 			let itemSpecification = ev.currentTarget.attributes[`data-${data.type}-type`].value;
 
-			if (data.type === "spell") {
+			if (data.type == "spell") {
 				data = mergeObject(data,
 					{
 						"system.lore.value": itemSpecification,
 					});
-			} else if (data.type === "prayer") {
+			} else if (data.type == "prayer") {
 				data = mergeObject(data,
 					{
 						"system.type.value": itemSpecification,
@@ -1534,10 +1535,10 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 	_onEffectCreate (ev) {
 		let type = ev.currentTarget.attributes["data-effect"].value;
 		let effectData = { label: game.i18n.localize("New Effect") };
-		if (type === "temporary") {
+		if (type == "temporary") {
 			effectData["duration.rounds"] = 1;
 		}
-		if (type === "applied") {
+		if (type == "applied") {
 			effectData["flags.wfrp4e.effectApplication"] = "apply";
 		}
 		this.actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
@@ -1612,10 +1613,10 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let dragData = JSON.parse(ev.dataTransfer.getData("text/plain"));
 
 		// Inventory Tab - Containers - Detected when you drop something onto a container, otherwise, move on to other drop types
-		if ($(ev.target).parents(".item").attr("inventory-type") === "container") { this._onDropIntoContainer(ev); }
+		if ($(ev.target).parents(".item").attr("inventory-type") == "container") { this._onDropIntoContainer(ev); }
 
 		// Dropping an item from chat
-		else if (dragData.type === "postedItem") { this.actor.createEmbeddedDocuments("Item", [dragData.payload]); } else if (dragData.type === "generation") { this._onDropCharGen(dragData); } else if (dragData.type === "lookup") { this._onDropLookupItem(dragData); } else if (dragData.type === "experience") { this._onDropExperience(dragData); } else if (dragData.type === "money") { this._onDropMoney(dragData); } else if (dragData.type === "wounds") { this.modifyWounds(`+${dragData.payload}`); } else if (dragData.type === "condition") { this.actor.addCondition(`${dragData.payload}`); } else // If none of the above, just process whatever was dropped upstream
+		else if (dragData.type == "postedItem") { this.actor.createEmbeddedDocuments("Item", [dragData.payload]); } else if (dragData.type == "generation") { this._onDropCharGen(dragData); } else if (dragData.type == "lookup") { this._onDropLookupItem(dragData); } else if (dragData.type == "experience") { this._onDropExperience(dragData); } else if (dragData.type == "money") { this._onDropMoney(dragData); } else if (dragData.type == "wounds") { this.modifyWounds(`+${dragData.payload}`); } else if (dragData.type == "condition") { this.actor.addCondition(`${dragData.payload}`); } else // If none of the above, just process whatever was dropped upstream
 		{ super._onDrop(ev); }
 	}
 
@@ -1628,9 +1629,9 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		item.system.location.value = dropID; // Change location value of item to the id of the container it is in
 
 		//  this will unequip/remove items like armor and weapons when moved into a container
-		if (item.type === "armour") { item.system.worn.value = false; }
-		if (item.type === "weapon") { item.system.equipped = false; }
-		if (item.type === "trapping" && item.system.trappingType.value === "clothingAccessories") { item.system.worn = false; }
+		if (item.type == "armour") { item.system.worn.value = false; }
+		if (item.type == "weapon") { item.system.equipped = false; }
+		if (item.type == "trapping" && item.system.trappingType.value == "clothingAccessories") { item.system.worn = false; }
 
 		return this.actor.updateEmbeddedDocuments("Item", [item]);
 	}
@@ -1638,13 +1639,13 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 	// Dropping a character creation result
 	_onDropCharGen (dragData) {
 		let data = duplicate(this.actor._source.system);
-		if (dragData.generationType === "attributes") // Characteristsics, movement, metacurrency, etc.
+		if (dragData.generationType == "attributes") // Characteristsics, movement, metacurrency, etc.
 		{
 			data.details.species.value = dragData.payload.species;
 			data.details.species.subspecies = dragData.payload.subspecies;
 			data.details.move.value = dragData.payload.movement;
 
-			if (this.actor.type === "character") // Other actors don't care about these values
+			if (this.actor.type == "character") // Other actors don't care about these values
 			{
 				data.status.fate.value = dragData.payload.fate;
 				data.status.fortune.value = dragData.payload.fate;
@@ -1738,7 +1739,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 		let type = ev.currentTarget.dataset.type;
 		let money = this.actor.getItemTypes("money").map(m => m.toObject());
 
-		if (type === "gc") {
+		if (type == "gc") {
 			let currentGC = money.find(i => i.name == game.i18n.localize("NAME.GC"));
 			let currentSS = money.find(i => i.name == game.i18n.localize("NAME.SS"));
 
@@ -1749,7 +1750,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			} else { return ui.notifications.error(game.i18n.localize("ErrorMoneyConvert")); }
 		}
 
-		if (type === "ss") {
+		if (type == "ss") {
 			let currentSS = money.find(i => i.name == game.i18n.localize("NAME.SS"));
 			let currentBP = money.find(i => i.name == game.i18n.localize("NAME.BP"));
 
@@ -1871,7 +1872,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 			});
 
 			if (action.test) {
-				if (action.test.type === "characteristic") {
+				if (action.test.type == "characteristic") {
 					this.actor.setupCharacteristic(action.test.value).then(test => test.roll());
 				}
 			}
@@ -2008,7 +2009,7 @@ export default class ActorSheetWfrp4e extends ActorSheet {
 					[game.i18n.localize("Special Ammo")]: ammo.system.special.value,
 				});
 			propertyKey = game.i18n.localize("Special Ammo");
-		} else if (property === "Special") // Special comes from user-entry in a Weapon's Special box
+		} else if (property == "Special") // Special comes from user-entry in a Weapon's Special box
 		{
 			this.actor.items.get(li.attr("data-item-id"));
 			// Add the special value to the object so that it can be looked up

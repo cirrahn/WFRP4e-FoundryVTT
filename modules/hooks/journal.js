@@ -34,5 +34,7 @@ export default function () {
 		html.find(".fear-link").mousedown(WFRP_Utility.handleFearClick.bind(WFRP_Utility));
 		html.find(".terror-link").mousedown(WFRP_Utility.handleTerrorClick.bind(WFRP_Utility));
 		html.find(".exp-link").mousedown(WFRP_Utility.handleExpClick.bind(WFRP_Utility));
+
+		WFRP_Utility.addLinkSources(html);
 	});
 }

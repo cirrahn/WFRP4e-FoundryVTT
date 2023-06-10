@@ -892,6 +892,28 @@ WFRP4E.symptomTreatment = {};
 WFRP4E.modTypes = {};
 WFRP4E.symptomEffects = {};
 
+WFRP4E.premiumModules = {
+	"wfrp4e": "WFRP4e System",
+	"wfrp4e-core": "Core Rulebook",
+	"wfrp4e-starter-set": "Starter Set",
+	"wfrp4e-rnhd": "Rough Nights & Hard Days",
+	"wfrp4e-eis": "Enemy In Shadows",
+	"wfrp4e-ua1": "Ubersreik Adventures I",
+	"wfrp4e-dotr": "Death on the Reik",
+	"wfrp4e-middenheim": "Middenheim: City of the White Wolf",
+	"wfrp4e-archives1": "Archives of the Empire: Vol 1.",
+	"wfrp4e-pbtt": "Power Behind the Throne",
+	"wfrp4e-altdorf": "Altdorf: Crown of the Empire",
+	"wfrp4e-ua2": "Ubersreik Adventures II",
+	"wfrp4e-owb1": "Old World Bundle I",
+	"wfrp4e-horned-rat": "The Horned Rat",
+	"wfrp4e-empire-ruins": "Empire in Ruins",
+	"wfrp4e-archives2": "Archives of the Empire: Vol 2.",
+	"wfrp4e-up-in-arms": "Up In Arms",
+	"wfrp4e-wom": "Winds of Magic",
+	"wfrp4e-zoo": "Imperial Zoo",
+};
+
 WFRP4E.trade = {
 	gazetteer: [],
 	settlementRating: {
@@ -1097,13 +1119,13 @@ WFRP4E.PrepareSystemItems = function () {
                         let skillName = game.i18n.localize("NAME.Cool");
                         args.actor.setupSkill(skillName, {terror: true}).then(setupData =>{
                         args.actor.basicTest(setupData).then(test => {
-                            let terror = this.effect.flags.wfrp4e.terrorValue;
+                            let terror = this.effect.flags.wfrp4e.terrorValue;   
                             args.actor.applyFear(terror, name)
-                            if (test.result.outcome === "failure")
-                            {
+                            if (test.result.outcome == "failure")
+                            {            
                                 if (test.result.SL < 0)
                                     terror += Math.abs(test.result.SL)
-
+                    
                                 args.actor.addCondition("broken", terror)
                             }
                             })
@@ -1397,7 +1419,7 @@ WFRP4E.PrepareSystemItems = function () {
 					"effectTrigger": "prePrepareItem",
 					"effectApplication": "actor",
 					"script": `
-                        if (args.item.type === "weapon" && args.item.isEquipped)
+                        if (args.item.type == "weapon" && args.item.isEquipped)
                         {
                             let weaponLength = args.item.reachNum
                             if (weaponLength > 3)
@@ -1428,11 +1450,11 @@ WFRP4E.PrepareSystemItems = function () {
                         let skillName = this.effect.label.substring(this.effect.label.indexOf("[") + 1, this.effect.label.indexOf("]"))
                         if (!this.actor.isOpposing)
                         return
-                        if ((args.type === "skill" && args.item.name == skillName) ||
-                            (args.type === "weapon" && args.item.skillToUse.name == skillName) ||
-                            (args.type === "cast" && skillName == (game.i18n.localize("NAME.Language") + " (" + game.i18n.localize("SPEC.Magick") + ")")) ||
-                            (args.type === "prayer" && skillName == game.i18n.localize("NAME.Pray")) ||
-                            (args.type === "trait" && args.item.rollable.skill == skillName))
+                        if ((args.type == "skill" && args.item.name == skillName) ||
+                            (args.type == "weapon" && args.item.skillToUse.name == skillName) ||
+                            (args.type == "cast" && skillName == (game.i18n.localize("NAME.Language") + " (" + game.i18n.localize("SPEC.Magick") + ")")) ||
+                            (args.type == "prayer" && skillName == game.i18n.localize("NAME.Pray")) || 
+                            (args.type == "trait" && args.item.rollable.skill == skillName))
                             args.prefillModifiers.modifier += 20`,
 				},
 			},
@@ -1911,9 +1933,9 @@ WFRP4E.effectPlaceholder = {
     type: string, 'weapon', 'skill' 'characteristic', etc.
     item: the item used of the aforementioned type
     options: other details about the test (options.rest or options.mutate for example)
-
-    Example:
-    if (args.type === "skill" && args.item.name === "Athletics") args.prefillModifiers.modifier += 10`,
+    
+    Example: 
+    if (args.type == "skill" && args.item.name == "Athletics") args.prefillModifiers.modifier += 10`,
 
 	"prePrepareData":
     `This effect is applied before any actor data is calculated.
@@ -2266,7 +2288,7 @@ WFRP4E.effectPlaceholder = {
     damageMultiplier : multiplier calculated based on size difference
     sizeDiff : numeric difference in sized, will then be used to add damaging/impact
     opposedTest : opposedTest object,
-    addDamaging : whether to add the Damaging quality
+    addDamaging : whether to add the Damaging quality 
     addImpact : whether to add the Impact quality
     `,
 
@@ -2286,9 +2308,9 @@ WFRP4E.effectPlaceholder = {
     type: string, 'weapon', 'skill' 'characteristic', etc.
     item: the item used of the aforementioned type
     options: other details about the test (options.rest or options.mutate for example)
-
-    Example:
-    if (args.type === "skill" && args.item.name === "Athletics") args.prefillModifiers.modifier += 10`,
+    
+    Example: 
+    if (args.type == "skill" && args.item.name == "Athletics") args.prefillModifiers.modifier += 10`,
 
 	"endTurn":
     `This effect runs at the end of an actor's turn
@@ -2323,8 +2345,8 @@ WFRP4E.effectPlaceholder = {
 
 	"this":
     `
-
-    All effects have access to:
+    
+    All effects have access to: 
         this.actor : actor running the effect
         this.effect : effect being executed
         this.item : item that has the effect, if effect comes from an item`,

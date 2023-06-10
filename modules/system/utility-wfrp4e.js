@@ -184,8 +184,8 @@ export default class WFRP_Utility {
 	}
 
 	static find (name, type) {
-		if (type === "skill") { return game.wfrp4e.utility.findSkill(name); }
-		if (type === "talent") { return game.wfrp4e.utility.findTalent(name); } else { return game.wfrp4e.utility.findItem(name, type); }
+		if (type == "skill") { return game.wfrp4e.utility.findSkill(name); }
+		if (type == "talent") { return game.wfrp4e.utility.findTalent(name); } else { return game.wfrp4e.utility.findItem(name, type); }
 	}
 
 	static findItemId (id, type) {
@@ -498,7 +498,7 @@ export default class WFRP_Utility {
 	}
 
 	static miracleGainedDialog (miracle, actor) {
-		let xp = 100 * (actor.getItemTypes("prayer").filter(p => p.prayerType.value === "miracle").length);
+		let xp = 100 * (actor.getItemTypes("prayer").filter(p => p.prayerType.value == "miracle").length);
 		if (xp) {
 			new Dialog({
 				title: game.i18n.localize("DIALOG.GainPrayer"),
@@ -532,21 +532,21 @@ export default class WFRP_Utility {
 
 		if (["slaanesh", "tzeentch", "nurgle"].includes(spell.lore.value)) { return 0; }
 
-		if (spell.lore.value === "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) { bonus = actor.characteristics.wp.bonus; } else { bonus = actor.characteristics.int.bonus; }
+		if (spell.lore.value == "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) { bonus = actor.characteristics.wp.bonus; } else { bonus = actor.characteristics.int.bonus; }
 
-		if (spell.lore.value !== "petty" && spell.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) {
+		if (spell.lore.value != "petty" && spell.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) {
 			currentlyKnown = actor.getItemTypes("spell").filter(i => i.lore.value == spell.lore.value && i.memorized.value).length;
-		} else if (spell.lore.value === "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) {
+		} else if (spell.lore.value == "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) {
 			currentlyKnown = actor.getItemTypes("spell").filter(i => i.lore.value == spell.lore.value).length;
 			if (currentlyKnown < bonus) { return 0; } // First WPB petty spells are free
 		}
 
 		let costKey = currentlyKnown;
-		if (spell.lore.value !== "petty" && spell.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) { costKey++; } // Not sure if this is right, but arcane and petty seem to scale different per th example given
+		if (spell.lore.value != "petty" && spell.lore.value != game.i18n.localize("WFRP4E.MagicLores.petty")) { costKey++; } // Not sure if this is right, but arcane and petty seem to scale different per th example given
 
 		cost = Math.ceil(costKey / bonus) * 100;
 
-		if (spell.lore.value === "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) cost *= 0.5; // Petty costs 50 each instead of 100
+		if (spell.lore.value == "petty" || spell.lore.value == game.i18n.localize("WFRP4E.MagicLores.petty")) cost *= 0.5; // Petty costs 50 each instead of 100
 
 		return cost;
 	}
@@ -703,10 +703,10 @@ export default class WFRP_Utility {
 
 		for (let pack of packs) {
 			let items;
-			await pack.getDocuments().then(content => items = content.filter(i => i.type === "skill"));
+			await pack.getDocuments().then(content => items = content.filter(i => i.type == "skill"));
 			for (let i of items) {
-				if (i.system.advanced.value === "bsc") {
-					if (i.system.grouped.value !== "noSpec") {
+				if (i.system.advanced.value == "bsc") {
+					if (i.system.grouped.value != "noSpec") {
 						let skill = i.toObject();
 						let startParen = skill.name.indexOf("(");
 						skill.name = skill.name.substring(0, startParen).trim();
@@ -730,7 +730,7 @@ export default class WFRP_Utility {
 
 		for (let pack of packs) {
 			let items;
-			await pack.getDocuments().then(content => items = content.filter(i => i.type === "money").map(i => i.toObject()));
+			await pack.getDocuments().then(content => items = content.filter(i => i.type == "money").map(i => i.toObject()));
 
 			let money = items.filter(t => Object.values(game.wfrp4e.config.moneyNames).map(n => n.toLowerCase()).includes(t.name.toLowerCase()));
 
@@ -798,7 +798,7 @@ export default class WFRP_Utility {
 			} else if (clickText.trim() == game.i18n.localize("ROLL.TotalPower")) { html = game.wfrp4e.tables.restrictedCriticalCastMenu(); }
 
 			// Not really a table but whatever
-			else if ($(event.currentTarget).attr("data-table") === "misfire") {
+			else if ($(event.currentTarget).attr("data-table") == "misfire") {
 				let damage = $(event.currentTarget).attr("data-damage");
 				html = game.i18n.format("ROLL.Misfire", { damage: damage });
 			} else {
@@ -952,11 +952,11 @@ export default class WFRP_Utility {
 
 		if (game.user.isGM) {
 			setProperty(effect, "flags.wfrp4e.effectApplication", "");
-			setProperty(effect, "flags.core.statusId", effect.label.toLowerCase());
-			let msg = `${game.i18n.format("EFFECT.Applied", {name: effect.label})} `;
+			setProperty(effect, "flags.core.statusId", (effect.label || effect.name).toLowerCase()); // V11 shim
+			let msg = `${game.i18n.format("EFFECT.Applied", {name: (effect.label || effect.name)})} `; // V11 shim
 			let actors = [];
 
-			if (effect.flags.wfrp4e.effectTrigger === "oneTime") {
+			if (effect.flags.wfrp4e.effectTrigger == "oneTime") {
 				targets.forEach(t => {
 					actors.push(t.actor.prototypeToken.name);
 					game.wfrp4e.utility.applyOneTimeEffect(effect, t.actor);
@@ -1050,7 +1050,7 @@ export default class WFRP_Utility {
 		if (!actor) actor = game.actors.get(speaker.actor);
 		let item;
 		// Not technically an item, used for convenience
-		if (itemType === "characteristic") {
+		if (itemType == "characteristic") {
 			return actor.setupCharacteristic(itemName, bypassData).then(test => test.roll());
 		} else {
 			item = actor ? actor.getItemTypes(itemType).find(i => i.name === itemName) : null;
@@ -1073,10 +1073,6 @@ export default class WFRP_Utility {
 	}
 
 	static async toggleMorrslieb () {
-		if (game.release.generation == 11) {
-			return ui.notifications.error("Morrslieb is currently not functional in V11");
-		}
-
 		let morrsliebActive = canvas.scene.getFlag("wfrp4e", "morrslieb");
 		morrsliebActive = !morrsliebActive;
 		await canvas.scene.setFlag("wfrp4e", "morrslieb", morrsliebActive);
@@ -1190,24 +1186,33 @@ export default class WFRP_Utility {
 				game.wfrp4e.config.speciesCareerReplacements[species] = replacements[species];
 			}
 		}
+	}
 
-		mergeObject(game.wfrp4e.config.speciesCareerReplacements, {
-			"human-middenheimer": {
-				"Wolf Kin": ["Flagellant"],
-			},
-			"human-middenlander": {
-				"Wolf Kin": ["Flagellant"],
-			},
-			"human-nordlander": {
-				"Wolf Kin": ["Flagellant"],
-			},
+	// Add the source of a compendium link
+	// e.g. Compendium.wfrp4e-core -> (WFRP4e Core Rulebook) tooltip
+	static addLinkSources (html) {
+		html.find(".content-link").each((index, element) => {
+			let uuid = element.dataset.uuid;
+			let tooltip = element.dataset.tooltip || "";
+			if (uuid) {
+				let moduleKey = uuid.split(".")[1];
+				if (game.wfrp4e.config.premiumModules[moduleKey]) {
+					if (!tooltip) {
+						tooltip = `${game.wfrp4e.config.premiumModules[moduleKey]}`;
+					} else {
+						tooltip += ` (${game.wfrp4e.config.premiumModules[moduleKey]})`;
+					}
+				}
+			}
+
+			element.dataset.tooltip = tooltip;
 		});
 	}
 }
 
 Hooks.on("renderFilePicker", (app, html, data) => {
 	let folder = data.target.split("/")[0];
-	if (folder === "systems" || folder === "modules") {
+	if (folder == "systems" || folder == "modules") {
 		html.find("input[name='upload']").css("display", "none");
 		let label = html.find(".upload-file label");
 		label.text("Upload Disabled");

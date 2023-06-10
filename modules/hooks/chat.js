@@ -281,6 +281,7 @@ export default function () {
  */
 
 	Hooks.on("renderChatMessage", async (app, html, msg) => {
+		WFRP_Utility.addLinkSources(html);
 		// Hide test data from players (35 vs 50) so they don't know the enemy stats
 		if (game.settings.get("wfrp4e", "hideTestData") && !game.user.isGM && html.find(".chat-card").attr("data-hide") === "true") {
 			html.find(".hide-option").remove();
@@ -310,7 +311,7 @@ export default function () {
 			postedItem.classList.add("draggable");
 
 			postedItem.addEventListener("dragstart", ev => {
-				if (app.flags.postQuantity === "inf" || app.flags.postQuantity == undefined) { return ev.dataTransfer.setData("text/plain", app.flags.transfer); }
+				if (app.flags.postQuantity == "inf" || app.flags.postQuantity == undefined) { return ev.dataTransfer.setData("text/plain", app.flags.transfer); }
 
 				if (game.user.isGM) {
 					ev.dataTransfer.setData("text/plain", app.flags.transfer);

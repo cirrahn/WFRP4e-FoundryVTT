@@ -49,6 +49,7 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 		this.element.find(".import").attr({"data-tooltip": game.i18n.localize("SHEET.Import"), "data-tooltip-direction": "UP"});
 		let idLink = this.element.find(".document-id-link");
 		this.element.find(".window-title").after(idLink);
+		WFRP_Utility.addLinkSources(this.element);
 	}
 
 	/**
@@ -73,7 +74,7 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 		const data = await super.getData();
 		data.system = data.item._source.system; // Use source data to avoid modifications being applied
 
-		if (this.item.type === "spell") {
+		if (this.item.type == "spell") {
 			if (game.wfrp4e.config.magicLores[this.item.lore.value]) {
 				data["loreValue"] = game.wfrp4e.config.magicLores[this.item.lore.value];
 			} else {
@@ -82,13 +83,13 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 		}
 
 		// @HOUSE
-		if (this.item.type === "weapon" && game.settings.get("wfrp4e", "mooRangeBands")) {
+		if (this.item.type == "weapon" && game.settings.get("wfrp4e", "mooRangeBands")) {
 			game.wfrp4e.utility.logHomebrew("mooRangeBands");
 			data.showOptimal = true;
 		}
 		// @/HOUSE
 
-		else if (this.item.type === "career") {
+		else if (this.item.type == "career") {
 			data["skills"] = this.item.system.skills.join(", ").toString();
 			data["earningSkills"] = this.item.system.incomeSkill.map(skillIndex => this.item.system.skills[skillIndex]);
 			data["talents"] = this.item.system.talents.toString();
@@ -108,14 +109,14 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 				}
 			}
 			data["characteristicList"] = characteristicList;
-		} else if (this.item.type === "cargo") {
+		} else if (this.item.type == "cargo") {
 			data.cargoTypes = game.wfrp4e.config.trade.cargoTypes;
 			data.qualities = game.wfrp4e.config.trade.qualities;
 			data["dotrActive"] = (game.modules.get("wfrp4e-dotr") && game.modules.get("wfrp4e-dotr").active);
 		}
 
-		if (this.item.type === "critical" || this.item.type === "injury" || this.item.type === "disease" || this.item.type === "mutation") { this.addConditionData(data); }
-		data.showBorder = data.item.img === "systems/wfrp4e/icons/blank.png" || !data.item.img;
+		if (this.item.type == "critical" || this.item.type == "injury" || this.item.type == "disease" || this.item.type == "mutation") { this.addConditionData(data); }
+		data.showBorder = data.item.img == "systems/wfrp4e/icons/blank.png" || !data.item.img;
 		data.isOwned = this.item.isOwned;
 
 		data.enrichment = await this._handleEnrichment();
@@ -163,7 +164,7 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 
 	async _onDrop (event) {
 		let data = JSON.parse(event.dataTransfer.getData("text/plain"));
-		if (data.type === "ActiveEffect") {
+		if (data.type == "ActiveEffect") {
 			const effect = await ActiveEffect.implementation.fromDropData(data);
 			if (!this.item.isOwner || !effect) {
 				return false;
@@ -335,7 +336,7 @@ export default class ItemSheetWfrp4e extends ItemSheet {
 	}
 
 	_onEffectCreate (ev) {
-		if (this.item.isOwned) { return ui.notifications.warn(game.i18n.localize("ERROR.AddEffect")); } else { this.item.createEmbeddedDocuments("ActiveEffect", [{ label: this.item.name, icon: this.item.img, transfer: !(this.item.type === "spell" || this.item.type === "prayer") }]); }
+		if (this.item.isOwned) { return ui.notifications.warn(game.i18n.localize("ERROR.AddEffect")); } else { this.item.createEmbeddedDocuments("ActiveEffect", [{ label: this.item.name, icon: this.item.img, transfer: !(this.item.type == "spell" || this.item.type == "prayer") }]); }
 	}
 
 	_onEffectTitleClick (ev) {
